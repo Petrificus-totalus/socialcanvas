@@ -1,0 +1,78 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "GilroyRegular", sans-serif;
+  color: #000;
+}
+
+.bg {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  position: relative;
+  width: 200px; /* 放大 logo 宽度 */
+  height: 80px; /* 放大 logo 高度 */
+  display: flex;
+  align-items: center; /* 确保图片垂直居中 */
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  font-size: 1.5rem;
+  align-items: center; /* 让所有菜单项垂直居中对齐 */
+}
+
+.menu a {
+  display: flex;
+  align-items: center; /* 使文字在单个链接内也垂直居中 */
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  height: 40px; /* 给所有 a 固定高度 */
+  padding: 0 16px; /* 水平内边距 */
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.menu .contact {
+  font-family: "GilroyMedium", sans-serif;
+  background-color: #66518a;
+  color: white;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 950px;
+  transform: translate(-50%, -90%);
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+}
