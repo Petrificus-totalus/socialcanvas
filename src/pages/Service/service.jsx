@@ -1,5 +1,13 @@
-import React from "react";
+"use client";
+
+import One from "./one/one";
+import Two from "./two/two";
 
 export default function Service() {
-  return <div>frontpage</div>;
+  return (
+    <div>
+      <One />
+      <Two />
+    </div>
+  );
 }

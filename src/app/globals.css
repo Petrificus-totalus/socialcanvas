@@ -1,6 +1,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --service-text-top: 15%;
+  --service-text-left: 12%;
+  --service-title-size: 4.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,6 +61,13 @@ a {
 @font-face {
   font-family: "GilroyMedium";
   src: url("/Font/Gilroy-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GilroyBold";
+  src: url("/Font/Gilroy-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
