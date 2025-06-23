@@ -19,9 +19,9 @@ export default function Two() {
 
       {/* 右上角标题区 */}
       <div className={styles.heading}>
-        <p className={styles.white}>BRAND IDENTITY</p>
-        <p className={styles.purple}>WEBSITE / SEO</p>
-        <p className={styles.purple}>SOCIAL MEDIA</p>
+        <div className={styles.white}>BRAND IDENTITY</div>
+        <div className={styles.purple}>WEBSITE / SEO</div>
+        <div className={styles.purple}>SOCIAL MEDIA</div>
       </div>
 
       {/* 中间 icon + paragraph */}

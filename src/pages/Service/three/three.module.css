@@ -1,7 +1,7 @@
 .section {
   min-height: 100vh;
-  background: #000;
-  color: white;
+  background: #eae1ed;
+  color: #000;
   padding: 0 var(--service-text-left) 10%;
   position: relative;
   box-sizing: border-box;
@@ -14,10 +14,10 @@
 /* 手图左上角定位 */
 .hand {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 50vw;
-  height: 50vh;
+  top: 10%;
+  left: -3%;
+  width: 35vw;
+  height: 35vh;
   z-index: 12;
 }
 
@@ -26,6 +26,8 @@
   align-self: flex-end;
   margin-top: var(--service-text-top);
   text-align: right;
+
+  position: relative;
 }
 
 .heading div {
@@ -36,24 +38,26 @@
 
 .white {
   color: white;
-  position: relative;
 
   /* line-height: 1; */
   display: inline-block;
 }
 
-.white::after {
+.purple::after {
   content: "";
   position: absolute;
   left: -100vw; /* 向左撑出整屏 */
   right: -100vw; /* 向右撑出整屏 */
   bottom: 0.9rem;
   height: 1px;
-  background-color: white;
+  background-color: #493e5e;
+
+  pointer-events: none;
 }
 
 .purple {
-  color: #b191be;
+  color: #493e5e;
+  position: relative;
 }
 
 /* 中间内容区域 */
@@ -64,6 +68,13 @@
   gap: 24px;
   text-align: left;
   margin-top: 10px;
+}
+
+.iconRow {
+  display: flex;
+  gap: 0.4rem; /* 控制两个图标之间的间距 */
+  position: relative;
+  z-index: 2;
 }
 
 .icon {
@@ -77,7 +88,7 @@
   font-family: "GilroyMedium", sans-serif;
   font-size: 1.8rem;
   line-height: 1.3;
-  color: white;
+  color: #000;
 }
 
 @media (max-width: 768px) {

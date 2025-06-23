@@ -1,6 +1,7 @@
 "use client";
 
 import One from "./one/one";
+import Three from "./three/three";
 import Two from "./two/two";
 
 export default function Service() {
@@ -8,6 +9,7 @@ export default function Service() {
     <div>
       <One />
       <Two />
+      <Three />
     </div>
   );
 }
