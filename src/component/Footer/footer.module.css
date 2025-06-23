@@ -1,0 +1,81 @@
+.footer {
+  width: 100%;
+  padding: 30px 10%;
+  color: white;
+  min-height: 180px;
+  background-color: #493e5e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "GilroyMedium";
+}
+
+/* ✅ 让 logo 保持合适大小 */
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* ✅ 右侧信息 */
+.contactInfo {
+  text-align: left;
+}
+
+.contactInfo p {
+  font-size: 1.5rem;
+}
+
+/* ✅ 适配平板（最大宽度 1024px）：缩小间距 */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 25px 8%;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .contactInfo p {
+    font-size: 14px;
+  }
+}
+
+/* ✅ 适配手机（最大宽度 768px）：改成竖向排列 */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px 5%;
+  }
+
+  .logo img {
+    width: 140px;
+    margin-bottom: 20px;
+  }
+
+  .contactInfo p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* ✅ 适配超小屏幕（最大宽度 480px）：调整大小 */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 15px 13%;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .contactInfo p {
+    font-size: 12px;
+  }
+}

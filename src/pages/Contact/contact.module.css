@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  padding: 8% var(--service-text-left);
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: black;
+}
+
+.bg {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.title {
+  font-size: var(--service-title-size);
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+  min-width: 280px;
+}
+
+.column input,
+.column textarea {
+  padding: 18px;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid #5a516a;
+  outline: none;
+  background: #f9f9f9;
+  font-family: inherit;
+}
+
+.submit {
+  padding: 14px 40px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  background: #493e5e;
+  border: none;
+  border-radius: 30px;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+/* ✅ 移动端样式 */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 24px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .submit {
+    align-self: center;
+  }
+}

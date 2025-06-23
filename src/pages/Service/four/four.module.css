@@ -1,7 +1,7 @@
 .section {
   min-height: 100vh;
-  background: #eae1ed;
-  color: #000;
+  background: #493e5e;
+  color: #fff;
   padding: 0 var(--service-text-left) 10%;
   position: relative;
   box-sizing: border-box;
@@ -14,10 +14,10 @@
 /* 手图左上角定位 */
 .hand {
   position: absolute;
-  top: 10%;
-  left: -3%;
-  width: 35vw;
-  height: 35vh;
+  top: 5%;
+  left: -8%;
+  width: 45vw;
+  height: 45vh;
   z-index: 12;
 }
 
@@ -38,26 +38,25 @@
 
 .white {
   color: white;
-
+  position: relative;
   /* line-height: 1; */
   display: inline-block;
 }
 
-.purple::after {
+.white::after {
   content: "";
   position: absolute;
   left: -100vw; /* 向左撑出整屏 */
   right: -100vw; /* 向右撑出整屏 */
   bottom: 0.9rem;
   height: 1px;
-  background-color: #493e5e;
+  background-color: #fff;
 
   pointer-events: none;
 }
 
 .purple {
-  color: #493e5e;
-  position: relative;
+  color: #b191be;
 }
 
 /* 中间内容区域 */
@@ -88,7 +87,7 @@
   font-family: "GilroyMedium", sans-serif;
   font-size: 1.8rem;
   line-height: 1.3;
-  color: #000;
+  color: #fff;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,87 @@
+.section {
+  position: relative;
+  padding: 8% var(--service-text-left);
+  color: black;
+  min-height: 100vh;
+}
+
+.bg {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.title {
+  font-size: var(--service-title-size);
+  z-index: 2;
+  position: relative;
+  text-align: left;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+.card {
+  flex: 1 0 180px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 16px;
+}
+
+.name {
+  font-family: "GilroyBold";
+  font-size: 1.7rem;
+}
+
+.role {
+  font-family: "GilroyMedium";
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* === ✅ 移动端适配 === */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 24px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card {
+    max-width: 120px;
+    flex: 1 0 40%;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+  }
+}

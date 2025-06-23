@@ -4,6 +4,7 @@ import Contact from "@/pages/Contact/contact";
 import Team from "@/pages/Team/team";
 
 import styles from "./page.module.css";
+import Footer from "@/component/Footer/footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <section id="contact" className={styles.section}>
         <Contact />
       </section>
+      <Footer />
     </>
   );
 }

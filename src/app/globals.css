@@ -1,9 +1,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --service-text-top: 15%;
+  --service-text-top: 12%;
   --service-text-left: 12%;
   --service-title-size: 4.5rem;
+  --service-content-margintop: 60px;
 }
 
 @media (prefers-color-scheme: dark) {

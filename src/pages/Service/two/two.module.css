@@ -63,7 +63,7 @@
   align-items: flex-start;
   gap: 24px;
   text-align: left;
-  margin-top: 10px;
+  margin-top: var(--service-content-margintop);
 }
 
 .icon {
