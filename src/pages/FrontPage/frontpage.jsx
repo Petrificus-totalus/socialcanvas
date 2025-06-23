@@ -3,10 +3,32 @@
 import styles from "./FrontPage.module.css";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function FrontPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const burgerRef = useRef(null);
+
+  useEffect(() => {
+    if ((menuOpen || closing) && burgerRef.current) {
+      const rect = burgerRef.current.getBoundingClientRect();
+      const root = document.documentElement;
+      root.style.setProperty("--burger-top", `${rect.top + rect.height / 2}px`);
+      root.style.setProperty(
+        "--burger-left",
+        `${rect.left + rect.width / 2}px`
+      );
+    }
+  }, [menuOpen, closing]);
+
+  const closeMenu = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 400);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -28,15 +50,19 @@ export default function FrontPage() {
           />
         </div>
 
-        {/* Hamburger Icon */}
         <div
-          className={styles.hamburger}
-          onClick={() => setMenuOpen(!menuOpen)}
+          className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+          onClick={() => {
+            if (menuOpen) closeMenu();
+            else setMenuOpen(true);
+          }}
+          ref={burgerRef}
         >
-          ☰
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
         </div>
 
-        {/* Desktop Menu */}
         <div className={styles.menu}>
           <Link to="service" smooth={true} duration={600}>
             Our Service
@@ -53,38 +79,36 @@ export default function FrontPage() {
             Contact Us
           </Link>
         </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className={styles.mobileMenu}>
-            <Link
-              to="service"
-              smooth={true}
-              duration={600}
-              onClick={() => setMenuOpen(false)}
-            >
-              Our Service
-            </Link>
-            <Link
-              to="team"
-              smooth={true}
-              duration={600}
-              onClick={() => setMenuOpen(false)}
-            >
-              Our Team
-            </Link>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={600}
-              className={styles.contact}
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
-          </div>
-        )}
       </nav>
+
+      {(menuOpen || closing) && (
+        <div className={styles.overlay} onClick={closeMenu}>
+          <div
+            className={`${styles.overlayBackground} ${
+              closing ? styles.shrink : ""
+            }`}
+          />
+          {menuOpen && !closing && (
+            <div className={styles.overlayMenu}>
+              <Link to="service" smooth duration={600} onClick={closeMenu}>
+                Our Service
+              </Link>
+              <Link to="team" smooth duration={600} onClick={closeMenu}>
+                Our Team
+              </Link>
+              <Link
+                to="contact"
+                smooth
+                duration={600}
+                className={styles.contact}
+                onClick={closeMenu}
+              >
+                Contact Us
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
 
       <main className={styles.content}>
         <p>

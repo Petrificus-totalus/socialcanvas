@@ -11,6 +11,7 @@
   z-index: -1;
 }
 
+/* 顶部导航栏 */
 .navbar {
   position: absolute;
   top: 0;
@@ -20,34 +21,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
 }
 
+/* Logo 样式 */
 .logo {
   position: relative;
-  width: 200px; /* 放大 logo 宽度 */
-  height: 80px; /* 放大 logo 高度 */
+  width: 200px;
+  height: 80px;
   display: flex;
-  align-items: center; /* 确保图片垂直居中 */
+  align-items: center;
 }
 
+/* Desktop 菜单 */
 .menu {
   display: flex;
   gap: 24px;
   font-size: 1.5rem;
-  align-items: center; /* 让所有菜单项垂直居中对齐 */
+  align-items: center;
 }
 
 .menu a {
-  display: flex;
-  align-items: center; /* 使文字在单个链接内也垂直居中 */
-  justify-content: center;
   text-decoration: none;
   color: #000;
-  height: 40px; /* 给所有 a 固定高度 */
-  padding: 0 16px; /* 水平内边距 */
+  height: 40px;
+  padding: 0 16px;
   border-radius: 8px;
   transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -57,6 +59,52 @@
   color: white;
 }
 
+/* 汉堡按钮 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  transition: transform 0.2s ease;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.open {
+  animation: spinIn 1s ease-out;
+}
+
+@keyframes spinIn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+/* 菜单文字内容 */
 .content {
   position: absolute;
   top: 50%;
@@ -69,6 +117,7 @@
   line-height: 1.6;
 }
 
+/* 滚动提示 */
 .scrollHint {
   position: absolute;
   bottom: 20%;
@@ -77,49 +126,108 @@
   font-size: 1.6rem;
 }
 
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 20;
+/* ================= 移动菜单动画 ================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 90; /* 保证在 overlay 上面 */
 }
 
-/* 移动菜单样式 */
-.mobileMenu {
+.overlayBackground {
   position: absolute;
-  top: 100%;
-  right: 8%;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 12px;
+  top: var(--burger-top, 1rem);
+  left: var(--burger-left, 1rem);
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: expandCircle 0.4s ease-out forwards;
+  transform-origin: center;
+  z-index: 90; /* 保证在 overlay 上面 */
+}
+
+.overlayBackground.shrink {
+  animation: shrinkCircle 0.4s ease-in forwards;
+}
+
+@keyframes expandCircle {
+  to {
+    transform: scale(80);
+  }
+}
+
+@keyframes shrinkCircle {
+  from {
+    transform: scale(80);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+/* 展开后的菜单 */
+.overlayMenu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; /* 保证在 overlay 上面 */
+
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  font-size: 1.3rem;
-  z-index: 15;
+  align-items: flex-start;
+  gap: 2rem;
+  animation: fadeInMenu 0.6s ease 0.3s forwards;
+  opacity: 0;
 }
 
-.mobileMenu a {
-  color: #000;
-  text-decoration: none;
-}
-
-.mobileMenu .contact {
-  background-color: #66518a;
+.overlayMenu a {
+  font-size: 1.4rem;
+  font-family: "GilroyMedium", sans-serif;
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-align: center;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.4s ease forwards;
 }
 
-/* ✅ 移动端样式 */
+.overlayMenu a:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.overlayMenu a:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.overlayMenu a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInMenu {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= 移动端适配 ================= */
 @media (max-width: 768px) {
   .menu {
     display: none;
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 
   .navbar {
@@ -129,7 +237,9 @@
   .content {
     font-size: 1.2rem;
     padding: 0 24px;
-    text-align: center;
+  }
+  .logo {
+    z-index: 10;
   }
 
   .scrollHint {
