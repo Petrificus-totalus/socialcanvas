@@ -67,7 +67,7 @@
     flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 20px;
     padding: 15px 13%;
   }
 
@@ -76,6 +76,6 @@
   }
 
   .contactInfo p {
-    font-size: 12px;
+    font-size: 18px;
   }
 }

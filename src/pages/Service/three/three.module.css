@@ -48,10 +48,9 @@
   position: absolute;
   left: -100vw; /* 向左撑出整屏 */
   right: -100vw; /* 向右撑出整屏 */
-  bottom: 0.9rem;
+  bottom: 0.35rem;
   height: 1px;
   background-color: #493e5e;
-
   pointer-events: none;
 }
 

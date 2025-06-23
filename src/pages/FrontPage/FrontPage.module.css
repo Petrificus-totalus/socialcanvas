@@ -76,3 +76,63 @@
   text-align: center;
   font-size: 1.6rem;
 }
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* 移动菜单样式 */
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  right: 8%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.3rem;
+  z-index: 15;
+}
+
+.mobileMenu a {
+  color: #000;
+  text-decoration: none;
+}
+
+.mobileMenu .contact {
+  background-color: #66518a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ✅ 移动端样式 */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 30px 8%;
+  }
+
+  .content {
+    font-size: 1.2rem;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .scrollHint {
+    font-size: 1.2rem;
+  }
+}

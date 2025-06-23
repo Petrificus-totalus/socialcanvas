@@ -66,12 +66,18 @@
   .form {
     flex-direction: column;
   }
+  .column input,
+  .column textarea {
+    padding: 12px;
+    font-size: 1rem;
+  }
 
   .title {
     font-size: 2rem;
   }
-
   .submit {
-    align-self: center;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
   }
 }
