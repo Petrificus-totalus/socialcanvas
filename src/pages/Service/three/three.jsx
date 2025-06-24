@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Three() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="three">
       <div className={styles.hand}>
         <Image
           src="/Hand2.svg"

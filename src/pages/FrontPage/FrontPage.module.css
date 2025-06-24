@@ -23,6 +23,39 @@
   align-items: center;
 }
 
+.jellyBg {
+  position: absolute;
+  width: 160px;
+  height: 40px;
+  background-color: #66518a;
+  border-radius: 12px;
+  z-index: -1;
+  transition: top 0.4s ease, left 0.4s ease;
+  pointer-events: none;
+}
+
+.bounce {
+  animation: jellyBounce 0.6s ease;
+}
+
+@keyframes jellyBounce {
+  0% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  70% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 /* Logo 样式 */
 .logo {
   position: relative;
@@ -53,13 +86,15 @@
   cursor: pointer;
 }
 
+.menu a:hover {
+  color: #fff;
+}
+
 .menu .contact {
   font-family: "GilroyMedium", sans-serif;
-  background-color: #66518a;
   color: white;
 }
 
-/* 汉堡按钮 */
 .hamburger {
   display: none;
   flex-direction: column;

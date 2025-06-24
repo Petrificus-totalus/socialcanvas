@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Two() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="two">
       {/* 左上角手的图片 */}
       <div className={styles.hand}>
         <Image

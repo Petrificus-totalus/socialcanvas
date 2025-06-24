@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./one.module.css";
+import { Link } from "react-scroll";
 
 export default function One() {
   return (
@@ -14,9 +15,15 @@ export default function One() {
         priority
       />
       <div className={styles.text}>
-        <p>BRAND IDENTITY</p>
-        <p>WEBSITE / SEO</p>
-        <p>SOCIAL MEDIA</p>
+        <Link to="two" smooth={true} duration={500} className={styles.link}>
+          BRAND IDENTITY
+        </Link>
+        <Link to="three" smooth={true} duration={500} className={styles.link}>
+          WEBSITE / SEO
+        </Link>
+        <Link to="four" smooth={true} duration={500} className={styles.link}>
+          SOCIAL MEDIA
+        </Link>
       </div>
     </div>
   );

@@ -10,6 +10,10 @@ export default function FrontPage() {
   const [closing, setClosing] = useState(false);
   const burgerRef = useRef(null);
 
+  const jellyRef = useRef(null);
+  const [jellyPos, setJellyPos] = useState({ top: 0, left: 0 });
+  const [originalPos, setOriginalPos] = useState({ top: 0, left: 0 });
+
   useEffect(() => {
     if ((menuOpen || closing) && burgerRef.current) {
       const rect = burgerRef.current.getBoundingClientRect();
@@ -22,12 +26,41 @@ export default function FrontPage() {
     }
   }, [menuOpen, closing]);
 
+  useEffect(() => {
+    const contactEl = document.querySelector(".contact-link");
+    if (contactEl && jellyRef.current) {
+      const rect = contactEl.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const left = rect.left + window.scrollX;
+      setJellyPos({ top, left });
+      setOriginalPos({ top, left });
+    }
+  }, []);
   const closeMenu = () => {
     setClosing(true);
     setTimeout(() => {
       setMenuOpen(false);
       setClosing(false);
     }, 400);
+  };
+
+  const moveJelly = (targetId) => {
+    const link = document.getElementById(targetId);
+    console.log(link);
+
+    if (!link || !jellyRef.current) return;
+    const rect = link.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    const left = rect.left + window.scrollX;
+    setJellyPos({ top, left });
+    jellyRef.current.classList.add(styles.bounce);
+    setTimeout(() => {
+      jellyRef.current.classList.remove(styles.bounce);
+    }, 600);
+  };
+
+  const resetJelly = () => {
+    setJellyPos(originalPos);
   };
 
   return (
@@ -63,21 +96,44 @@ export default function FrontPage() {
           <span className={styles.line}></span>
         </div>
 
-        <div className={styles.menu}>
-          <Link to="service" smooth={true} duration={600}>
-            Our Service
-          </Link>
-          <Link to="team" smooth={true} duration={600}>
-            Our Team
-          </Link>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={600}
-            className={styles.contact}
+        <div className={styles.menu} onMouseLeave={resetJelly}>
+          <div
+            ref={jellyRef}
+            className={styles.jellyBg}
+            style={{ top: jellyPos.top, left: jellyPos.left }}
+          />
+          <div
+            id="service"
+            className={styles.menuItem}
+            onMouseEnter={() => moveJelly("service")}
           >
-            Contact Us
-          </Link>
+            <Link to="service" smooth duration={600}>
+              Our Service
+            </Link>
+          </div>
+          <div
+            id="team"
+            className={styles.menuItem}
+            onMouseEnter={() => moveJelly("team")}
+          >
+            <Link to="team" smooth duration={600}>
+              Our Team
+            </Link>
+          </div>
+          <div
+            id="contact"
+            className={styles.menuItem}
+            onMouseEnter={() => moveJelly("contact")}
+          >
+            <Link
+              to="contact"
+              smooth
+              duration={600}
+              className={`${styles.contact} contact-link`}
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </nav>
 

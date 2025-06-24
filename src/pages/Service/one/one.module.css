@@ -18,7 +18,25 @@
   right: var(--service-text-left);
   font-size: var(--service-title-size);
   line-height: 1.1;
+  display: flex;
+  flex-direction: column;
   text-align: right;
+}
+.link {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #000000; /* 默认黑色 */
+  font-weight: bold;
+  padding: 4px 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.link:hover {
+  color: #ac92bb; /* hover 时变为淡紫 */
+  transform: translateX(4px); /* 向右滑动一点，增加动感 */
+  text-shadow: 0 0 6px rgba(172, 146, 187, 0.4); /* 微弱发光 */
 }
 
 @media (max-width: 768px) {
