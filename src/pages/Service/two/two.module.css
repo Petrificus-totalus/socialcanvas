@@ -82,13 +82,16 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding-bottom: 0;
+  }
   .heading {
-    margin-top: 40px;
-    margin-right: var(--service-text-left);
+    margin-top: 60px;
+    margin-right: 8%;
   }
 
   .heading div {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: right;
   }
 

@@ -116,7 +116,7 @@
     width: 50vw;
     height: 35vh;
   }
-  .white::after {
-    bottom: 0.4rem;
+  .purple::after {
+    bottom: 0.35rem;
   }
 }
