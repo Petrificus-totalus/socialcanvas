@@ -4,6 +4,8 @@ import styles from "./FrontPage.module.css";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import { fadeInLeft } from "@/constant";
 
 export default function FrontPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -142,21 +144,25 @@ export default function FrontPage() {
       {/* 首页正文内容 */}
       <main className={styles.contentWrapper}>
         <div className={styles.content} ref={contentRef}>
-          <p>
+          <motion.p {...fadeInLeft()}>
             We're a passionate team of digital design experts dedicated to
             helping your business stand out. From building your brand to
             boosting your online presence, we craft bold, effective solutions
             that make your business shine.
-          </p>
+          </motion.p>
         </div>
       </main>
 
       {/* 向下滚动提示 + 箭头 */}
       <div className={styles.scrollArea}>
         <div className={styles.hintWrapper}>
-          <div className={styles.scrollHint} ref={hintRef}>
+          <motion.div
+            className={styles.scrollHint}
+            ref={hintRef}
+            {...fadeInLeft()}
+          >
             Scroll down to discover how we can help you grow.
-          </div>
+          </motion.div>
         </div>
         <div className={styles.arrow}></div>
       </div>
