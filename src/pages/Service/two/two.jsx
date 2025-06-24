@@ -2,12 +2,24 @@
 
 import styles from "./two.module.css";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { fadeIn } from "@/constant";
 
 export default function Two() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"], // 进入到视口和滑出时
+  });
+
+  // 视差移动：从 -100px 到 0
+  const handY = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+
   return (
-    <section className={styles.section} id="two">
-      {/* 左上角手的图片 */}
-      <div className={styles.hand}>
+    <section className={styles.section} id="two" ref={ref}>
+      {/* 左上角手的图片，加入 motion.div 包裹 */}
+      <motion.div className={styles.hand} style={{ y: handY }}>
         <Image
           src="/Hand1.svg"
           alt="Hand with Magnifier"
@@ -15,16 +27,14 @@ export default function Two() {
           style={{ objectFit: "contain" }}
           priority
         />
-      </div>
+      </motion.div>
 
-      {/* 右上角标题区 */}
       <div className={styles.heading}>
         <div className={styles.white}>BRAND IDENTITY</div>
         <div className={styles.purple}>WEBSITE / SEO</div>
         <div className={styles.purple}>SOCIAL MEDIA</div>
       </div>
 
-      {/* 中间 icon + paragraph */}
       <div className={styles.content}>
         <div className={styles.icon}>
           <Image
@@ -34,7 +44,7 @@ export default function Two() {
             style={{ objectFit: "contain" }}
           />
         </div>
-        <p className={styles.paragraph}>
+        <motion.p className={styles.paragraph} {...fadeIn()}>
           Your brand identity is the foundation of how your business is seen and
           remembered. We create distinctive, strategically driven identities
           that go beyond aesthetics—reflecting your values, voice, and vision.
@@ -42,7 +52,7 @@ export default function Two() {
           we develop complete identity systems that ensure consistency and
           clarity across all platforms. Whether you’re starting fresh or
           refreshing an existing brand, we help you make a lasting impression.
-        </p>
+        </motion.p>
       </div>
     </section>
   );

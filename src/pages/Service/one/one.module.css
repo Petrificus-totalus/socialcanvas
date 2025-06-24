@@ -22,21 +22,51 @@
   flex-direction: column;
   text-align: right;
 }
+
 .link {
   display: block;
-  cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
-  color: #000000; /* 默认黑色 */
-  font-weight: bold;
-  padding: 4px 0;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+  padding: 6px 0;
+  cursor: pointer;
 }
 
-.link:hover {
-  color: #ac92bb; /* hover 时变为淡紫 */
-  transform: translateX(4px); /* 向右滑动一点，增加动感 */
-  text-shadow: 0 0 6px rgba(172, 146, 187, 0.4); /* 微弱发光 */
+.char {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: black;
+  white-space: pre; /* 保留空格 */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+  opacity: 1; /* 确保字符可见 */
+}
+
+.link:hover .char {
+  color: #ac92bb;
+  transform: translateX(4px);
+  text-shadow: 0 0 6px rgba(172, 146, 187, 0.6);
+}
+
+.motion-div {
+  opacity: 1;
+}
+
+/* 扫描动画 - 从左到右 */
+.scan {
+  animation: scanAnimation 0.3s ease forwards;
+}
+
+@keyframes scanAnimation {
+  0% {
+    color: black;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    color: #ac92bb;
+    text-shadow: 0 0 8px rgba(172, 146, 187, 0.8);
+  }
+  100% {
+    color: black;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+  }
 }
 
 @media (max-width: 768px) {

@@ -2,6 +2,8 @@
 
 import styles from "./team.module.css";
 import Image from "next/image";
+import { fadeInLeft } from "@/constant";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {
@@ -41,11 +43,17 @@ export default function TeamSection() {
         className={styles.bg}
         priority
       />
-      <h2 className={styles.title}>BEHIND THE MAGIC</h2>
+      <motion.h2 className={styles.title} {...fadeInLeft()}>
+        BEHIND THE MAGIC
+      </motion.h2>
 
       <div className={styles.grid}>
-        {teamMembers.map((member) => (
-          <div key={member.name} className={styles.card}>
+        {teamMembers.map((member, i) => (
+          <motion.div
+            key={member.name}
+            className={styles.card}
+            {...fadeInLeft(0.1 * i)}
+          >
             <div className={styles.avatar}>
               <Image
                 src={member.avatar}
@@ -56,7 +64,7 @@ export default function TeamSection() {
             </div>
             <div className={styles.name}>{member.name}</div>
             <div className={styles.role}>{member.role}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

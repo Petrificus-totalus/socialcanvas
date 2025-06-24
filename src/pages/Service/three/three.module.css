@@ -19,6 +19,7 @@
   width: 35vw;
   height: 35vh;
   z-index: 12;
+  transform-origin: left center;
 }
 
 /* 右上角标题块 */
@@ -48,7 +49,7 @@
   position: absolute;
   left: -100vw; /* 向左撑出整屏 */
   right: -100vw; /* 向右撑出整屏 */
-  bottom: 0.35rem;
+  bottom: 0.9rem;
   height: 1px;
   background-color: #493e5e;
   pointer-events: none;

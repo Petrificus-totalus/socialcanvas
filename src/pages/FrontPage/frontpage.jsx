@@ -8,11 +8,18 @@ import { useState, useRef, useEffect } from "react";
 export default function FrontPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const burgerRef = useRef(null);
+  const contentRef = useRef(null);
+  const hintRef = useRef(null);
 
-  const jellyRef = useRef(null);
-  const [jellyPos, setJellyPos] = useState({ top: 0, left: 0 });
-  const [originalPos, setOriginalPos] = useState({ top: 0, left: 0 });
+  const closeMenu = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 400);
+  };
 
   useEffect(() => {
     if ((menuOpen || closing) && burgerRef.current) {
@@ -27,41 +34,20 @@ export default function FrontPage() {
   }, [menuOpen, closing]);
 
   useEffect(() => {
-    const contactEl = document.querySelector(".contact-link");
-    if (contactEl && jellyRef.current) {
-      const rect = contactEl.getBoundingClientRect();
-      const top = rect.top + window.scrollY;
-      const left = rect.left + window.scrollX;
-      setJellyPos({ top, left });
-      setOriginalPos({ top, left });
-    }
+    const handleScroll = () => {
+      console.log(contentRef.current.style.transform);
+
+      const y = window.scrollY;
+      if (contentRef.current) {
+        contentRef.current.style.transform = `translateX(${y * -1}px)`;
+      }
+      if (hintRef.current) {
+        hintRef.current.style.transform = `translateX(${y}px)`;
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const closeMenu = () => {
-    setClosing(true);
-    setTimeout(() => {
-      setMenuOpen(false);
-      setClosing(false);
-    }, 400);
-  };
-
-  const moveJelly = (targetId) => {
-    const link = document.getElementById(targetId);
-    console.log(link);
-
-    if (!link || !jellyRef.current) return;
-    const rect = link.getBoundingClientRect();
-    const top = rect.top + window.scrollY;
-    const left = rect.left + window.scrollX;
-    setJellyPos({ top, left });
-    jellyRef.current.classList.add(styles.bounce);
-    setTimeout(() => {
-      jellyRef.current.classList.remove(styles.bounce);
-    }, 600);
-  };
-
-  const resetJelly = () => {
-    setJellyPos(originalPos);
-  };
 
   return (
     <div className={styles.wrapper}>
@@ -73,6 +59,7 @@ export default function FrontPage() {
         priority
       />
 
+      {/* 顶部导航栏 */}
       <nav className={styles.navbar}>
         <div className={styles.logo}>
           <Image
@@ -85,10 +72,7 @@ export default function FrontPage() {
 
         <div
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
-          onClick={() => {
-            if (menuOpen) closeMenu();
-            else setMenuOpen(true);
-          }}
+          onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
           ref={burgerRef}
         >
           <span className={styles.line}></span>
@@ -96,47 +80,31 @@ export default function FrontPage() {
           <span className={styles.line}></span>
         </div>
 
-        <div className={styles.menu} onMouseLeave={resetJelly}>
-          <div
-            ref={jellyRef}
-            className={styles.jellyBg}
-            style={{ top: jellyPos.top, left: jellyPos.left }}
-          />
-          <div
-            id="service"
-            className={styles.menuItem}
-            onMouseEnter={() => moveJelly("service")}
-          >
-            <Link to="service" smooth duration={600}>
-              Our Service
-            </Link>
-          </div>
-          <div
-            id="team"
-            className={styles.menuItem}
-            onMouseEnter={() => moveJelly("team")}
-          >
-            <Link to="team" smooth duration={600}>
-              Our Team
-            </Link>
-          </div>
-          <div
-            id="contact"
-            className={styles.menuItem}
-            onMouseEnter={() => moveJelly("contact")}
-          >
-            <Link
-              to="contact"
-              smooth
-              duration={600}
-              className={`${styles.contact} contact-link`}
-            >
-              Contact Us
-            </Link>
-          </div>
+        <div className={styles.menu}>
+          {["scroll_service", "scroll_team", "scroll_contact"].map(
+            (id, index) => (
+              <div
+                key={id}
+                className={`${styles.menuItem} ${
+                  hoveredItem === id ||
+                  (!hoveredItem && id === "scroll_contact")
+                    ? styles.active
+                    : ""
+                }`}
+                onMouseEnter={() => setHoveredItem(id)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <div className={styles.jellyBg}></div>
+                <Link to={id} smooth duration={600}>
+                  {["Our Service", "Our Team", "Contact Us"][index]}
+                </Link>
+              </div>
+            )
+          )}
         </div>
       </nav>
 
+      {/* 移动端 overlay 菜单 */}
       {(menuOpen || closing) && (
         <div className={styles.overlay} onClick={closeMenu}>
           <div
@@ -146,14 +114,19 @@ export default function FrontPage() {
           />
           {menuOpen && !closing && (
             <div className={styles.overlayMenu}>
-              <Link to="service" smooth duration={600} onClick={closeMenu}>
+              <Link
+                to="scroll_service"
+                smooth
+                duration={600}
+                onClick={closeMenu}
+              >
                 Our Service
               </Link>
-              <Link to="team" smooth duration={600} onClick={closeMenu}>
+              <Link to="scroll_team" smooth duration={600} onClick={closeMenu}>
                 Our Team
               </Link>
               <Link
-                to="contact"
+                to="scroll_contact"
                 smooth
                 duration={600}
                 className={styles.contact}
@@ -166,17 +139,26 @@ export default function FrontPage() {
         </div>
       )}
 
-      <main className={styles.content}>
-        <p>
-          We're a passionate team of digital design experts dedicated to helping
-          your business stand out. From building your brand to boosting your
-          online presence, we craft bold, effective solutions that make your
-          business shine.
-        </p>
+      {/* 首页正文内容 */}
+      <main className={styles.contentWrapper}>
+        <div className={styles.content} ref={contentRef}>
+          <p>
+            We're a passionate team of digital design experts dedicated to
+            helping your business stand out. From building your brand to
+            boosting your online presence, we craft bold, effective solutions
+            that make your business shine.
+          </p>
+        </div>
       </main>
 
-      <div className={styles.scrollHint}>
-        Scroll down to discover how we can help you grow.
+      {/* 向下滚动提示 + 箭头 */}
+      <div className={styles.scrollArea}>
+        <div className={styles.hintWrapper}>
+          <div className={styles.scrollHint} ref={hintRef}>
+            Scroll down to discover how we can help you grow.
+          </div>
+        </div>
+        <div className={styles.arrow}></div>
       </div>
     </div>
   );

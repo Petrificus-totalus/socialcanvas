@@ -13,13 +13,13 @@ export default function Home() {
         <FrontPage />
       </section>
 
-      <section id="service" className={styles.section}>
+      <section id="scroll_service" className={styles.section}>
         <Service />
       </section>
-      <section id="team" className={styles.section}>
+      <section id="scroll_team" className={styles.section}>
         <Team />
       </section>
-      <section id="contact" className={styles.section}>
+      <section id="scroll_contact" className={styles.section}>
         <Contact />
       </section>
       <Footer />

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import styles from "./contact.module.css";
 import Image from "next/image";
+import { fadeInLeft } from "@/constant";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -36,49 +38,60 @@ export default function Contact() {
         priority
       />
 
-      <h2 className={styles.title}>GET IN TOUCH</h2>
+      <motion.h2 className={styles.title} {...fadeInLeft()}>
+        GET IN TOUCH
+      </motion.h2>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.column}>
-          <input
+          <motion.input
             name="name"
             placeholder="Your Name"
             value={form.name}
             onChange={handleChange}
             required
+            {...fadeInLeft()}
           />
-          <input
+          <motion.input
             name="email"
             placeholder="Your Email"
             value={form.email}
             onChange={handleChange}
             required
+            {...fadeInLeft(0.1)}
           />
         </div>
 
         <div className={styles.column}>
-          <input
+          <motion.input
             name="phone"
             placeholder="Your Phone Number"
             value={form.phone}
             onChange={handleChange}
+            {...fadeInLeft(0.1)}
           />
-          <input
+          <motion.input
             name="business"
             placeholder="Your Business"
             value={form.business}
             onChange={handleChange}
+            {...fadeInLeft(0.15)}
           />
-          <textarea
+          <motion.textarea
             name="enquiry"
             placeholder="Your Enquiry"
             rows={5}
             value={form.enquiry}
             onChange={handleChange}
+            {...fadeInLeft(0.15)}
           />
-          <button type="submit" className={styles.submit}>
+          <motion.button
+            type="submit"
+            className={styles.submit}
+            {...fadeInLeft(0.15)}
+          >
             SUBMIT
-          </button>
+          </motion.button>
         </div>
       </form>
     </section>
