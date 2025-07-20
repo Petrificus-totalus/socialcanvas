@@ -6,6 +6,7 @@ import styles from "./one.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { fadeIn } from "@/constant";
+import Head from "next/head";
 
 const lines = [
   {
@@ -80,44 +81,60 @@ export default function One() {
   }, [isInView, scanStarted]);
 
   return (
-    <div className={styles.wrapper} ref={sectionRef}>
-      <Image
-        src="/service.jpg"
-        alt="Service Background"
-        fill
-        className={styles.bg}
-        priority
-      />
+    <>
+      <Head>
+        <title>Brand Identity | Canberra Website Design & SEO</title>
+        <meta name="description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
+        <meta name="keywords" content="canberra, IT, website, design, develop, seo, software, brand identity" />
+        <meta property="og:title" content="Brand Identity | Canberra Website Design & SEO" />
+        <meta property="og:description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/service.jpg" />
+        <meta property="og:url" content="https://yourdomain.com/service/one" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Brand Identity | Canberra Website Design & SEO" />
+        <meta name="twitter:description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
+        <meta name="twitter:image" content="/service.jpg" />
+      </Head>
+      <div className={styles.wrapper} ref={sectionRef}>
+        <Image
+          src="/service.jpg"
+          alt="Service Background"
+          fill
+          className={styles.bg}
+          priority
+        />
 
-      <div className={styles.text}>
-        {lines.map(({ text, to, direction, delay }) => (
-          <motion.div key={to} {...fadeIn(direction, delay)}>
-            <Link to={to} smooth={true} duration={500} className={styles.link}>
-              {text.split("").map((char, i) => {
-                const len = text.length;
-                const delay = scanStarted
-                  ? (() => {
-                      if (i === 0) return 0;
-                      return 0.1 + (i - 1) * 0.04; // 剩下的快扫
-                    })()
-                  : 0;
+        <div className={styles.text}>
+          {lines.map(({ text, to, direction, delay }) => (
+            <motion.div key={to} {...fadeIn(direction, delay)}>
+              <Link to={to} smooth={true} duration={500} className={styles.link}>
+                {text.split("").map((char, i) => {
+                  const len = text.length;
+                  const delay = scanStarted
+                    ? (() => {
+                        if (i === 0) return 0;
+                        return 0.1 + (i - 1) * 0.04; // 剩下的快扫
+                      })()
+                    : 0;
 
-                return (
-                  <span
-                    key={i}
-                    className={`${styles.char} ${
-                      scanStarted ? styles.scan : ""
-                    }`}
-                    style={{ animationDelay: `${delay}s` }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                );
-              })}
-            </Link>
-          </motion.div>
-        ))}
+                  return (
+                    <span
+                      key={i}
+                      className={`${styles.char} ${
+                        scanStarted ? styles.scan : ""
+                      }`}
+                      style={{ animationDelay: `${delay}s` }}
+                    >
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  );
+                })}
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
