@@ -24,7 +24,7 @@ export default function Contact() {
     e.preventDefault();
     const subject = `Enquiry from ${form.name}`;
     const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0APhone: ${form.phone}%0D%0ABusiness: ${form.business}%0D%0AEnquiry: ${form.enquiry}`;
-    window.location.href = `mailto:your@email.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:alex@socialcanvas.com.au?subject=${encodeURIComponent(
       subject
     )}&body=${body}`;
   };
@@ -33,16 +33,34 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us | Canberra IT Website Design & SEO</title>
-        <meta name="description" content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions. Let's grow your business together!" />
-        <meta name="keywords" content="canberra, IT, website, design, develop, seo, software, contact" />
-        <meta property="og:title" content="Contact Us | Canberra IT Website Design & SEO" />
-        <meta property="og:description" content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions." />
+        <meta
+          name="description"
+          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions. Let's grow your business together!"
+        />
+        <meta
+          name="keywords"
+          content="canberra, IT, website, design, develop, seo, software, contact"
+        />
+        <meta
+          property="og:title"
+          content="Contact Us | Canberra IT Website Design & SEO"
+        />
+        <meta
+          property="og:description"
+          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/contact.jpg" />
         <meta property="og:url" content="https://yourdomain.com/contact" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Canberra IT Website Design & SEO" />
-        <meta name="twitter:description" content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions." />
+        <meta
+          name="twitter:title"
+          content="Contact Us | Canberra IT Website Design & SEO"
+        />
+        <meta
+          name="twitter:description"
+          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions."
+        />
         <meta name="twitter:image" content="/contact.jpg" />
       </Head>
       <section className={styles.section}>
