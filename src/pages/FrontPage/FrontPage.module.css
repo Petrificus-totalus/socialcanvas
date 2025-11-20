@@ -1,26 +1,30 @@
 .wrapper {
   position: relative;
   min-height: 100vh;
-  overflow: clip;
+  overflow: hidden;
   font-family: "GilroyRegular", sans-serif;
   color: #000;
+
+  /* 新：用 flex 垂直布局，保证 navbar / content / scrollArea 不重叠 */
+  display: flex;
+  flex-direction: column;
 }
 
+/* 背景图：铺满容器，置于最底层 */
 .bg {
   object-fit: cover;
   z-index: -1;
 }
 
-/* 顶部导航栏 */
+/* 顶部导航栏：现在不绝对定位 */
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   padding: 50px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 /* Logo 样式 */
@@ -32,7 +36,7 @@
   align-items: center;
 }
 
-/* 菜单容器 */
+/* 菜单容器（桌面端） */
 .menu {
   display: flex;
   gap: 24px;
@@ -118,7 +122,7 @@
   transition: transform 0.2s ease;
 }
 
-.hamburger span {
+.line {
   width: 25px;
   height: 3px;
   background-color: white;
@@ -139,53 +143,56 @@
   }
 }
 
-.hamburger.open span:nth-child(1) {
+.hamburger.open .line:nth-child(1) {
   transform: rotate(45deg);
   position: absolute;
 }
-.hamburger.open span:nth-child(2) {
+.hamburger.open .line:nth-child(2) {
   opacity: 0;
 }
-.hamburger.open span:nth-child(3) {
+.hamburger.open .line:nth-child(3) {
   transform: rotate(-45deg);
   position: absolute;
 }
 
-/* 正文内容区域 + 滚动提示带偏移动画支持 */
-.content,
-.scrollHint {
-  transition: transform 0.1s ease-out;
-}
-
+/* 中间正文内容：占据中部空间 */
 .contentWrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -90%);
-  width: 80%;
-  max-width: 950px;
+  flex: 1; /* 占据 navbar 和 scrollArea 之间的所有剩余高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(80%, 950px);
+  margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+/* 正文文本本身 */
 .content {
   font-family: "GilroyMedium", sans-serif;
-
   font-size: 1.6rem;
   line-height: 1.6;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out; /* 供 JS 滚动偏移动画使用 */
 }
+
+/* 底部滚动提示区域 */
 .scrollArea {
-  position: absolute;
-  bottom: 10%;
+  position: relative;
   width: 100%;
   text-align: center;
+  padding-bottom: 10vh; /* 离底部稍微远一点，好看一点 */
+  z-index: 1;
 }
+
 .hintWrapper {
   display: inline-block;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out; /* 供 JS 动画使用 */
 }
+
 .scrollHint {
   font-size: 1.6rem;
+  transition: transform 0.1s ease-out;
 }
 
 /* 向下箭头样式 */
@@ -308,10 +315,6 @@
     padding: 0 24px;
   }
 
-  .scrollArea {
-    bottom: 20%;
-  }
-
   .scrollHint {
     font-size: 1.2rem;
   }
@@ -319,5 +322,9 @@
   .arrow {
     width: 20px;
     height: 20px;
+  }
+
+  .scrollArea {
+    padding-bottom: 8vh;
   }
 }

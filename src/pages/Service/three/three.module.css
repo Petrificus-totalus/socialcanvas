@@ -119,4 +119,8 @@
   .purple::after {
     bottom: 0.35rem;
   }
+
+  .content {
+    margin-top: 140px;
+  }
 }

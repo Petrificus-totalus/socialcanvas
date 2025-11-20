@@ -38,9 +38,8 @@ export default function FrontPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(contentRef.current.style.transform);
-
       const y = window.scrollY;
+
       if (contentRef.current) {
         contentRef.current.style.transform = `translateX(${y * -1}px)`;
       }
@@ -48,6 +47,7 @@ export default function FrontPage() {
         hintRef.current.style.transform = `translateX(${y}px)`;
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -56,19 +56,39 @@ export default function FrontPage() {
     <>
       <Head>
         <title>Canberra IT Website Design & SEO | Social Canvas</title>
-        <meta name="description" content="Social Canvas - Canberra IT experts in website design, development, SEO, and software solutions. Elevate your business online with our creative team." />
-        <meta name="keywords" content="canberra, IT, website, design, develop, seo, software" />
-        <meta property="og:title" content="Canberra IT Website Design & SEO | Social Canvas" />
-        <meta property="og:description" content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas." />
+        <meta
+          name="description"
+          content="Social Canvas - Canberra IT experts in website design, development, SEO, and software solutions. Elevate your business online with our creative team."
+        />
+        <meta
+          name="keywords"
+          content="canberra, IT, website, design, develop, seo, software"
+        />
+        <meta
+          property="og:title"
+          content="Canberra IT Website Design & SEO | Social Canvas"
+        />
+        <meta
+          property="og:description"
+          content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/Home.jpg" />
         <meta property="og:url" content="https://yourdomain.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Canberra IT Website Design & SEO | Social Canvas" />
-        <meta name="twitter:description" content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas." />
+        <meta
+          name="twitter:title"
+          content="Canberra IT Website Design & SEO | Social Canvas"
+        />
+        <meta
+          name="twitter:description"
+          content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas."
+        />
         <meta name="twitter:image" content="/Home.jpg" />
       </Head>
+
       <div className={styles.wrapper}>
+        {/* 背景图 */}
         <Image
           src="/Home.jpg"
           alt="background"
@@ -86,16 +106,6 @@ export default function FrontPage() {
               fill
               style={{ objectFit: "contain" }}
             />
-          </div>
-
-          <div
-            className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
-            onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
-            ref={burgerRef}
-          >
-            <span className={styles.line}></span>
-            <span className={styles.line}></span>
-            <span className={styles.line}></span>
           </div>
 
           <div className={styles.menu}>
@@ -120,6 +130,17 @@ export default function FrontPage() {
               )
             )}
           </div>
+
+          {/* 汉堡按钮（移动端） */}
+          <div
+            className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+            onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
+            ref={burgerRef}
+          >
+            <span className={styles.line}></span>
+            <span className={styles.line}></span>
+            <span className={styles.line}></span>
+          </div>
         </nav>
 
         {/* 移动端 overlay 菜单 */}
@@ -140,7 +161,12 @@ export default function FrontPage() {
                 >
                   Our Service
                 </Link>
-                <Link to="scroll_team" smooth duration={600} onClick={closeMenu}>
+                <Link
+                  to="scroll_team"
+                  smooth
+                  duration={600}
+                  onClick={closeMenu}
+                >
                   Our Team
                 </Link>
                 <Link
@@ -157,7 +183,7 @@ export default function FrontPage() {
           </div>
         )}
 
-        {/* 首页正文内容 */}
+        {/* 中间正文内容 */}
         <main className={styles.contentWrapper}>
           <div className={styles.content} ref={contentRef}>
             <motion.p {...fadeInLeft()}>
@@ -169,7 +195,7 @@ export default function FrontPage() {
           </div>
         </main>
 
-        {/* 向下滚动提示 + 箭头 */}
+        {/* 向下滚动提示 + 箭头（底部区域） */}
         <div className={styles.scrollArea}>
           <div className={styles.hintWrapper}>
             <motion.div

@@ -118,4 +118,7 @@
   .white::after {
     bottom: 0.4rem;
   }
+  .content {
+    margin-top: 140px;
+  }
 }

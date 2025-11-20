@@ -110,6 +110,9 @@
     height: 35vh;
   }
   .white::after {
-    bottom: 0.4rem;
+    bottom: 0.3rem;
+  }
+  .content {
+    margin-top: 140px;
   }
 }
