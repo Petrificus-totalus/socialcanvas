@@ -14,7 +14,7 @@
 /* 手图左上角定位 */
 .hand {
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: -8%;
   width: 45vw;
   height: 45vh;
