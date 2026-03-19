@@ -16,17 +16,46 @@ export default function Contact() {
     enquiry: "",
   });
 
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = `Enquiry from ${form.name}`;
-    const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0APhone: ${form.phone}%0D%0ABusiness: ${form.business}%0D%0AEnquiry: ${form.enquiry}`;
-    window.location.href = `mailto:alex@socialcanvas.com.au?subject=${encodeURIComponent(
-      subject
-    )}&body=${body}`;
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      setMessage("Your enquiry has been sent successfully.");
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        business: "",
+        enquiry: "",
+      });
+    } catch (error) {
+      setStatus("error");
+      setMessage(error.message || "Failed to send enquiry.");
+    }
   };
 
   return (
@@ -63,6 +92,7 @@ export default function Contact() {
         />
         <meta name="twitter:image" content="/contact.jpg" />
       </Head>
+
       <section className={styles.section}>
         <Image
           src="/contact.jpg"
@@ -88,6 +118,7 @@ export default function Contact() {
             />
             <motion.input
               name="email"
+              type="email"
               placeholder="Your Email"
               value={form.email}
               onChange={handleChange}
@@ -117,15 +148,29 @@ export default function Contact() {
               rows={5}
               value={form.enquiry}
               onChange={handleChange}
+              required
               {...fadeInLeft(0.15)}
             />
             <motion.button
               type="submit"
               className={styles.submit}
+              disabled={status === "loading"}
               {...fadeInLeft(0.15)}
             >
-              SUBMIT
+              {status === "loading" ? "SENDING..." : "SUBMIT"}
             </motion.button>
+
+            {message && (
+              <p
+                className={
+                  status === "success"
+                    ? styles.successMessage
+                    : styles.errorMessage
+                }
+              >
+                {message}
+              </p>
+            )}
           </div>
         </form>
       </section>

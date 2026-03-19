@@ -57,6 +57,24 @@
   cursor: pointer;
 }
 
+.successMessage {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f7a1f;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b42318;
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
 /* ✅ 移动端样式 */
 @media (max-width: 768px) {
   .section {
