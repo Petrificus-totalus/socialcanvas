@@ -4,7 +4,6 @@ import styles from "./team.module.css";
 import Image from "next/image";
 import { fadeInLeft } from "@/constant";
 import { motion } from "framer-motion";
-import Head from "next/head";
 
 const teamMembers = [
   {
@@ -36,40 +35,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <>
-      <Head>
-        <title>Our Team | Canberra IT Website Design & SEO Experts</title>
-        <meta
-          name="description"
-          content="Meet the Social Canvas team: Canberra's experts in website design, SEO, software development and IT solutions."
-        />
-        <meta
-          name="keywords"
-          content="canberra, IT, website, design, develop, seo, software, team"
-        />
-        <meta
-          property="og:title"
-          content="Our Team | Canberra IT Website Design & SEO Experts"
-        />
-        <meta
-          property="og:description"
-          content="Meet the Social Canvas team: Canberra's experts in website design, SEO, software development and IT solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/Team.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/team" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Our Team | Canberra IT Website Design & SEO Experts"
-        />
-        <meta
-          name="twitter:description"
-          content="Meet the Social Canvas team: Canberra's experts in website design, SEO, software development and IT solutions."
-        />
-        <meta name="twitter:image" content="/Team.jpg" />
-      </Head>
-      <section className={styles.section}>
+    <section className={styles.section}>
         <Image
           src="/Team.jpg"
           alt="Background"
@@ -102,6 +68,5 @@ export default function TeamSection() {
           ))}
         </div>
       </section>
-    </>
   );
 }

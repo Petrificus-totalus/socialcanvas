@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { fadeIn } from "@/constant";
-import Head from "next/head";
 
 export default function Four() {
   const handRef = useRef(null);
@@ -30,22 +29,7 @@ export default function Four() {
   }, [scrollYProgress, controls]);
 
   return (
-    <>
-      <Head>
-        <title>Social Media Management | Canberra IT & SEO</title>
-        <meta name="description" content="Social media management and IT solutions in Canberra. Social Canvas helps your business grow online with design, SEO, and software." />
-        <meta name="keywords" content="canberra, IT, website, design, develop, seo, software, social media" />
-        <meta property="og:title" content="Social Media Management | Canberra IT & SEO" />
-        <meta property="og:description" content="Social media management and IT solutions in Canberra. Social Canvas helps your business grow online with design, SEO, and software." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/service.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/service/four" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Social Media Management | Canberra IT & SEO" />
-        <meta name="twitter:description" content="Social media management and IT solutions in Canberra. Social Canvas helps your business grow online with design, SEO, and software." />
-        <meta name="twitter:image" content="/service.jpg" />
-      </Head>
-      <section className={styles.section} id="four">
+    <section className={styles.section} id="four">
         <motion.div
           className={styles.hand}
           ref={handRef}
@@ -108,6 +92,5 @@ export default function Four() {
           </motion.p>
         </div>
       </section>
-    </>
   );
 }

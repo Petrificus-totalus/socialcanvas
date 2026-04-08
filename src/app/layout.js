@@ -1,9 +1,16 @@
 import "./globals.css";
 import Favicon from "/public/favicon.svg";
 
+const siteUrl = "https://www.socialcanvas.com.au";
+
 export const metadata = {
-  title: "Social Canvas",
-  description: "Social Canvas",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Canberra IT Website Design & SEO | Social Canvas",
+    template: "%s | Social Canvas",
+  },
+  description:
+    "Social Canvas — Canberra experts in website design, development, SEO, and software solutions. Elevate your business online with our creative team.",
   icons: [{ rel: "icon", url: Favicon.src }],
 };
 export const viewport = {

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { fadeIn } from "@/constant";
-import Head from "next/head";
 
 export default function Two() {
   const ref = useRef(null);
@@ -18,40 +17,7 @@ export default function Two() {
   const handY = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   return (
-    <>
-      <Head>
-        <title>Website & SEO | Canberra IT Services</title>
-        <meta
-          name="description"
-          content="Professional website design and SEO services in Canberra. Boost your online presence with Social Canvas IT experts."
-        />
-        <meta
-          name="keywords"
-          content="canberra, IT, website, design, develop, seo, software, web development"
-        />
-        <meta
-          property="og:title"
-          content="Website & SEO | Canberra IT Services"
-        />
-        <meta
-          property="og:description"
-          content="Professional website design and SEO services in Canberra. Boost your online presence with Social Canvas IT experts."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/service.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/service/two" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Website & SEO | Canberra IT Services"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional website design and SEO services in Canberra. Boost your online presence with Social Canvas IT experts."
-        />
-        <meta name="twitter:image" content="/service.jpg" />
-      </Head>
-      <section className={styles.section} id="two" ref={ref}>
+    <section className={styles.section} id="two" ref={ref}>
         {/* 左上角手的图片，加入 motion.div 包裹 */}
         <motion.div className={styles.hand} style={{ y: handY }}>
           <Image
@@ -90,6 +56,5 @@ export default function Two() {
           </motion.p>
         </div>
       </section>
-    </>
   );
 }

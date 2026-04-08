@@ -6,7 +6,6 @@ import styles from "./one.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { fadeIn } from "@/constant";
-import Head from "next/head";
 
 const lines = [
   {
@@ -81,22 +80,7 @@ export default function One() {
   }, [isInView, scanStarted]);
 
   return (
-    <>
-      <Head>
-        <title>Brand Identity | Canberra Website Design & SEO</title>
-        <meta name="description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
-        <meta name="keywords" content="canberra, IT, website, design, develop, seo, software, brand identity" />
-        <meta property="og:title" content="Brand Identity | Canberra Website Design & SEO" />
-        <meta property="og:description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/service.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/service/one" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Brand Identity | Canberra Website Design & SEO" />
-        <meta name="twitter:description" content="Build your brand identity with Social Canvas in Canberra. Website design, SEO, and IT software solutions for your business." />
-        <meta name="twitter:image" content="/service.jpg" />
-      </Head>
-      <div className={styles.wrapper} ref={sectionRef}>
+    <div className={styles.wrapper} ref={sectionRef}>
         <Image
           src="/service.jpg"
           alt="Service Background"
@@ -135,6 +119,5 @@ export default function One() {
           ))}
         </div>
       </div>
-    </>
   );
 }

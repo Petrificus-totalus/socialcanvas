@@ -5,7 +5,6 @@ import styles from "./contact.module.css";
 import Image from "next/image";
 import { fadeInLeft } from "@/constant";
 import { motion } from "framer-motion";
-import Head from "next/head";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -59,41 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Contact Us | Canberra IT Website Design & SEO</title>
-        <meta
-          name="description"
-          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions. Let's grow your business together!"
-        />
-        <meta
-          name="keywords"
-          content="canberra, IT, website, design, develop, seo, software, contact"
-        />
-        <meta
-          property="og:title"
-          content="Contact Us | Canberra IT Website Design & SEO"
-        />
-        <meta
-          property="og:description"
-          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/contact.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/contact" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Contact Us | Canberra IT Website Design & SEO"
-        />
-        <meta
-          name="twitter:description"
-          content="Contact Social Canvas for Canberra website design, SEO, software development and IT solutions."
-        />
-        <meta name="twitter:image" content="/contact.jpg" />
-      </Head>
-
-      <section className={styles.section}>
+    <section className={styles.section}>
         <Image
           src="/contact.jpg"
           alt="background"
@@ -174,6 +139,5 @@ export default function Contact() {
           </div>
         </form>
       </section>
-    </>
   );
 }

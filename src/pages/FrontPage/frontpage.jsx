@@ -6,7 +6,6 @@ import { Link } from "react-scroll";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { fadeInLeft } from "@/constant";
-import Head from "next/head";
 
 export default function FrontPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,41 +52,7 @@ export default function FrontPage() {
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>Canberra IT Website Design & SEO | Social Canvas</title>
-        <meta
-          name="description"
-          content="Social Canvas - Canberra IT experts in website design, development, SEO, and software solutions. Elevate your business online with our creative team."
-        />
-        <meta
-          name="keywords"
-          content="canberra, IT, website, design, develop, seo, software"
-        />
-        <meta
-          property="og:title"
-          content="Canberra IT Website Design & SEO | Social Canvas"
-        />
-        <meta
-          property="og:description"
-          content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/Home.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Canberra IT Website Design & SEO | Social Canvas"
-        />
-        <meta
-          name="twitter:description"
-          content="Canberra-based IT team for website design, development, SEO, and software. Grow your business with Social Canvas."
-        />
-        <meta name="twitter:image" content="/Home.jpg" />
-      </Head>
-
-      <div className={styles.wrapper}>
+    <div className={styles.wrapper}>
         {/* 背景图 */}
         <Image
           src="/Home.jpg"
@@ -209,6 +174,5 @@ export default function FrontPage() {
           <div className={styles.arrow}></div>
         </div>
       </div>
-    </>
   );
 }
