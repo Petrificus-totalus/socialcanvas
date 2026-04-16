@@ -12,7 +12,7 @@ export default function VideoWrapper({ children }) {
     return (
       <div
         style={{
-          backgroundColor: "#000",
+          backgroundColor: "#e4e4e4",
           height: "100dvh",
           width: "100vw",
           display: "flex",
@@ -22,7 +22,7 @@ export default function VideoWrapper({ children }) {
         }}
       >
         <video
-          src="/Logo.mp4"
+          src="/logo.mp4"
           autoPlay
           muted
           playsInline
