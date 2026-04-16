@@ -1,5 +1,6 @@
 import "./globals.css";
 import Favicon from "/public/favicon.svg";
+import VideoWrapper from "./clientwrapper";
 
 const siteUrl = "https://www.socialcanvas.com.au";
 
@@ -25,7 +26,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <VideoWrapper>{children}</VideoWrapper>
+      </body>
     </html>
   );
 }
