@@ -22,7 +22,7 @@ export default function VideoWrapper({ children }) {
         }}
       >
         <video
-          src="/logo.mp4"
+          src="/slogan.mp4"
           autoPlay
           muted
           playsInline
