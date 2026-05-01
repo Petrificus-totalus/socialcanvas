@@ -1,0 +1,117 @@
+export const works = [
+  {
+    slug: "42F",
+    title: "42FINANCE",
+    logo: "/work/42F/cover.png",
+    cover: "/work/42F/cover.png",
+    description: [
+      "42 Finance is a Canberra-based financial services company established in 2025, specialising in lending, financial management, and investment strategy. At the early stage of the business, the client engaged Social Canvas to develop a complete visual identity system to support their launch. The scope included logo design, website design, event flyers, promotional posters, and Instagram layout design and management.",
+      "The name 42 references The Hitchhiker's Guide to the Galaxy—“the answer to life, the universe, and everything.” Building on this concept, we explored how the brand could feel distinctive while remaining clearly grounded in the Australian financial sector. Colour became a key starting point. Drawing inspiration from the palette of Australian banknotes, we created a visual language that subtly reinforces trust, clarity, and financial relevance.",
+      "Following two months of collaboration and refinement, the result is a cohesive and recognisable identity system that balances professionalism with personality, supporting 42 Finance across both digital and print touchpoints.",
+    ],
+    images: [
+      "/work/42F/A4 Flyer.png",
+      "/work/42F/A5 Flyer.png",
+      "/work/42F/Dollar Flyer.png",
+      "/work/42F/Business_Card.png",
+      "/work/42F/Phone INS.png",
+    ],
+  },
+  {
+    slug: "h365",
+    title: "HORIZON 365",
+    logo: "/work/H365/logo.png",
+    cover: "/work/H365/cover.png",
+    description: [
+      "Horizon 365 is an Australian buyers' agency with offices in Brisbane and Canberra. The name reflects the idea of a rising horizon—symbolising a fresh start and a steady, supportive journey for clients navigating the property market. From the outset, the client wanted the brand to convey warmth, care, and reliability.",
+      "As the majority of shareholders are women, the team agreed on a distinctive colour direction combining soft pink with deep charcoal to create a refined and memorable visual presence. The palette balances approachability with confidence, helping the brand stand apart within the property sector while maintaining a premium feel.",
+      "The project included logo design, website design, business cards, social media templates, and a full suite of printed and promotional materials. The final identity subtly incorporates the horizon motif into the letterforms and numerals, reinforcing the brand story through a clean and cohesive visual language. The combination of dark grey and pink creates a modern, elegant system that works consistently across both digital and print applications.",
+    ],
+    images: [
+      "/work/H365/Website.png",
+      "/work/H365/Flyer.png",
+      "/work/H365/Business_Card.png",
+    ],
+  },
+  {
+    slug: "ABC",
+    title: "ABC Beef Club",
+    logo: "/work/ABC/Logo.png",
+    cover: "/work/ABC/cover.png",
+    description: [
+      "ABC Beef Club is a large-scale international beef import and export company. The name ABC was intentionally chosen for its familiarity and simplicity, making it easy for customers to recognise and remember across different markets.",
+      "The client's brief was to create a distinctive brand identity inspired by the atmosphere of a traditional British private club. The visual direction focused on a refined aesthetic, using premium typography, classic composition, and a sophisticated colour palette. The project extended across a wide range of applications, including logo development, packaging design, exterior glass artwork, brochures, and in-store price tags.",
+      "One of the key challenges of this project was securing trademark registration through the China National Intellectual Property Administration. Due to the highly competitive landscape, several early design directions were rejected because of similarities to existing registered marks. Through multiple rounds of refinement and adjustment, we successfully developed a unique identity that met both the client's expectations and registration requirements.",
+      "The final outcome is a cohesive and recognisable brand system that communicates quality, heritage, and confidence across retail and packaging environments.",
+    ],
+    images: ["/work/ABC/red.png", "/work/ABC/black.png"],
+  },
+  {
+    slug: "Maxsure",
+    title: "Maxsure Property",
+    logo: "/work/Maxsure/logo.png",
+    cover: "/work/Maxsure/cover.png",
+    description: [
+      "Maxsure Property is a Canberra-based property management company that approached Social Canvas to refresh its visual identity, three years after its original branding was developed. The client was seeking a more modern and confident look that better reflected the professionalism of their services while remaining recognisable to existing clients.",
+      "Building on the established use of yellow in the previous identity, we developed a refined black and yellow palette to create a stronger, more contemporary visual presence. The new logo integrates a subtle house structure within the letter M, reinforcing the company's connection to residential property while keeping the mark clean and versatile.",
+      "The project included logo design, business cards, a DL flyer for letterbox distribution, and an A-frame sign for property inspections. The result is a cohesive and practical identity system designed to work effectively across both marketing and on-site applications.",
+    ],
+    images: [
+      "/work/Maxsure/a-frame.png",
+      "/work/Maxsure/Business_Card.png",
+      "/work/Maxsure/Flyer.png",
+    ],
+  },
+  {
+    slug: "Dental",
+    title: "Mobile Dental Health Studio",
+    logo: "/work/Dental/logo.png",
+    cover: "/work/Dental/cover.png",
+    description: [
+      "MDHS is a Canberra-based dental hygiene and cleaning service established in 2025. When the client first approached Social Canvas, the business already had a stable client base along with basic materials such as an email setup and business cards, but lacked a cohesive and professional visual identity system.",
+      "The project included logo design, website design, new business cards, and a brochure for a dental health expo. The client requested a logo that felt clean, friendly, and approachable, with a simple “tooth and wings” concept to reflect care and lightness. In response, we combined water-inspired shapes with wing-like forms to create a distinctive mark that communicates freshness and gentleness. The overall palette centres on soft blue tones, aligning with the familiar visual language of dental care while reinforcing trust and clarity.",
+      "The result is a consistent and approachable identity that supports MDHS across both clinical communication and public-facing promotional materials. ",
+    ],
+    images: ["/work/Dental/Website.png", "/work/Dental/Business_Card.png"],
+  },
+  {
+    slug: "Otd",
+    title: "Ode to Flowers",
+    logo: "/work/Otd/logo.png",
+    cover: "/work/Otd/cover.png",
+    description: [
+      "Ode to Flowers is a boutique florist established in Canberra in 2023, specialising in premium, custom-made arrangements and personalised service. The client approached Social Canvas during the early stages of the business to develop a complete visual identity system, including the logo, website, shop signage, aprons, interior decorative elements, ribbons, wrapping paper, and stamps.",
+      "Inspired by the brand's French-influenced name, the client wanted the identity to reflect a refined Parisian aesthetic while conveying warmth and craftsmanship. The iris—traditionally associated with hope—was selected as a key symbolic element within the visual language. To support the poetic meaning of the word ode, we developed a hand-drawn logo style incorporating motifs such as stationery and floral arrangements, creating a sense of storytelling and artistry throughout the brand.",
+      "The result is a cohesive identity that expresses elegance, care, and individuality, positioning Ode to Flowers as a distinctive mid-to-high-end florist within the Canberra market.",
+    ],
+    images: [
+      "/work/Otd/Website.png",
+      "/work/Otd/Posters.png",
+      "/work/Otd/Car_Sticker.png",
+    ],
+  },
+  {
+    slug: "xc",
+    title: "Xtremely Clean",
+    logo: "/work/xc/logo.png",
+    cover: "/work/xc/cover.png",
+    description: [
+      "Xtremely Clean is a Canberra-based cleaning service established in 2025, providing high-quality residential and commercial cleaning. When the client first approached Social Canvas, the business had no existing brand identity—only a simple black card listing services and contact details.",
+      "We began by working closely with the client to understand their target audience, service positioning, and visual preferences. From this process, we developed a branding direction that balances professionalism with a friendly, approachable character, helping the business feel both reliable and welcoming.",
+      "The resulting identity establishes a clear and recognisable presence across customer touchpoints, supporting Xtremely Clean as it grows from an early-stage service provider into a more structured local brand.",
+    ],
+    images: ["/work/xc/Business_Card.png", "/work/xc/Flyers.png"],
+  },
+  {
+    slug: "Maxwell",
+    title: "Maxwell Migration",
+    logo: "/work/Maxwell/logo.png",
+    cover: "/work/Maxwell/cover.png",
+    description: [
+      "Maxwell Migration is the migration services arm of the Canberra-based Maxwell & Co Lawyers. The client's brief was to develop a new logo that aligned closely with the established Maxwell brand while clearly distinguishing the migration practice as a dedicated service offering.",
+      "Following the logo development, the project focused primarily on social media strategy and content design. Building on the existing Maxwell visual language and the new identity, we created a flexible suite of social media templates to support regular updates and improve consistency across posts.",
+      "Within just two months of launch, the account attracted over 1,000 local followers, significantly increasing the company's visibility within the Canberra community and strengthening awareness of its migration services.",
+    ],
+    images: ["/work/Maxwell/Phone.png"],
+  },
+];

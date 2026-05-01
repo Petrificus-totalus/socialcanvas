@@ -1,0 +1,159 @@
+.page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 70px 20px 100px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 70px;
+}
+
+.header h1 {
+  margin: 0 0 18px;
+  color: #b191be;
+  font-size: clamp(52px, 8vw, 80px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.back {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.back:hover {
+  color: #c89ad9;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.faqItem {
+  overflow: hidden;
+}
+
+.question {
+  width: 100%;
+  border: none;
+  background: #524166;
+  color: #fff;
+  border-radius: 22px;
+  padding: 20px 48px;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.question:hover {
+  background: #654f7f;
+  transform: translateY(-3px);
+}
+
+.question.active {
+  border-radius: 22px 22px 0 0;
+  background: #5b4770;
+}
+
+.icon {
+  font-size: 28px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.answerWrap {
+  overflow: hidden;
+}
+
+.answer {
+  background: #343434;
+  margin: 0 24px;
+  padding: 26px 28px 32px;
+}
+
+.answer p {
+  max-width: 920px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .page {
+    padding: 46px 16px 70px;
+  }
+
+  .header {
+    margin-bottom: 42px;
+  }
+
+  .header h1 {
+    font-size: 48px;
+    letter-spacing: -1.5px;
+    line-height: 0.95;
+  }
+
+  .back {
+    font-size: 14px;
+  }
+
+  .faqList {
+    gap: 16px;
+  }
+
+  .question {
+    border-radius: 18px;
+    padding: 17px 20px;
+    font-size: 17px;
+  }
+
+  .question.active {
+    border-radius: 18px 18px 0 0;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .answer {
+    margin: 0 10px;
+    padding: 22px 18px 26px;
+  }
+
+  .answer p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 420px) {
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+}

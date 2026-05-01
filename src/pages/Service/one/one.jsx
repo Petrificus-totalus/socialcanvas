@@ -14,12 +14,29 @@ const lines = [
     direction: "down",
     delay: 0.2,
   },
-  { text: "WEBSITE / SEO", to: "section_web", direction: "up", delay: 0.6 },
+  {
+    text: "WEBSITE / SEO",
+    to: "section_web",
+    direction: "up",
+    delay: 0.6,
+  },
   {
     text: "SOCIAL MEDIA",
     to: "section_social",
     direction: "up",
     delay: 1,
+  },
+  {
+    text: "IT PROGRAM",
+    to: "section_it",
+    direction: "up",
+    delay: 1.4,
+  },
+  {
+    text: "CUSTOMISED STATIONERY",
+    to: "section_stationery",
+    direction: "up",
+    delay: 1.8,
   },
 ];
 
@@ -81,43 +98,43 @@ export default function One() {
 
   return (
     <div className={styles.wrapper} ref={sectionRef}>
-        <Image
-          src="/service.jpg"
-          alt="Service Background"
-          fill
-          className={styles.bg}
-          priority
-        />
+      <Image
+        src="/service.jpg"
+        alt="Service Background"
+        fill
+        className={styles.bg}
+        priority
+      />
 
-        <div className={styles.text}>
-          {lines.map(({ text, to, direction, delay }) => (
-            <motion.div key={to} {...fadeIn(direction, delay)}>
-              <Link to={to} smooth={true} duration={500} className={styles.link}>
-                {text.split("").map((char, i) => {
-                  const len = text.length;
-                  const delay = scanStarted
-                    ? (() => {
-                        if (i === 0) return 0;
-                        return 0.1 + (i - 1) * 0.04; // 剩下的快扫
-                      })()
-                    : 0;
+      <div className={styles.text}>
+        {lines.map(({ text, to, direction, delay }) => (
+          <motion.div key={to} {...fadeIn(direction, delay)}>
+            <Link to={to} smooth={true} duration={500} className={styles.link}>
+              {text.split("").map((char, i) => {
+                const len = text.length;
+                const delay = scanStarted
+                  ? (() => {
+                      if (i === 0) return 0;
+                      return 0.1 + (i - 1) * 0.04; // 剩下的快扫
+                    })()
+                  : 0;
 
-                  return (
-                    <span
-                      key={i}
-                      className={`${styles.char} ${
-                        scanStarted ? styles.scan : ""
-                      }`}
-                      style={{ animationDelay: `${delay}s` }}
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </span>
-                  );
-                })}
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+                return (
+                  <span
+                    key={i}
+                    className={`${styles.char} ${
+                      scanStarted ? styles.scan : ""
+                    }`}
+                    style={{ animationDelay: `${delay}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                );
+              })}
+            </Link>
+          </motion.div>
+        ))}
       </div>
+    </div>
   );
 }
