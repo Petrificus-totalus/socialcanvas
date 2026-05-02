@@ -13,7 +13,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -44,19 +44,19 @@
 
 .intro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 70px;
   align-items: center;
   margin-bottom: 70px;
 }
 
 .text {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .text p {
-  font-size: clamp(18px, 1.4vw, 20px);
-  line-height: 1.8;
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.3;
   font-weight: 400;
   color: currentColor;
   opacity: 0.82;

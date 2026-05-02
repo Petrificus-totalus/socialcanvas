@@ -4,7 +4,7 @@ export const works = [
     title: "42FINANCE",
     backgroundColor: "#ffffff",
     titleColor: "#767676",
-    logo: "/work/42F/cover.png",
+    logo: "/work/42F/logo.png",
     cover: "/work/42F/cover.png",
     description: [
       "42 Finance is a Canberra-based financial services company established in 2025, specialising in lending, financial management, and investment strategy. At the early stage of the business, the client engaged Social Canvas to develop a complete visual identity system to support their launch. The scope included logo design, website design, event flyers, promotional posters, and Instagram layout design and management.",
