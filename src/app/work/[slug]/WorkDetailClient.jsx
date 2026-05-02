@@ -7,11 +7,21 @@ import { fadeInUp } from "@/constant";
 import styles from "./detail.module.css";
 
 export default function WorkDetailClient({ work }) {
+  const backgroundColor = work.backgroundColor || "#ffffff";
+  const titleColor = work.titleColor || "#000000";
+
+  const isDark =
+    backgroundColor.toLowerCase() === "#000" ||
+    backgroundColor.toLowerCase() === "#000000";
+
   return (
-    <main className={styles.page}>
+    <main
+      className={`${styles.page} ${isDark ? styles.dark : styles.light}`}
+      style={{ backgroundColor }}
+    >
       <section className={styles.container}>
         <header className={styles.header}>
-          <h1>{work.title}</h1>
+          <h1 style={{ color: titleColor }}>{work.title}</h1>
 
           <Link href="/work" className={styles.back}>
             &lt; OUR WORK
@@ -27,7 +37,7 @@ export default function WorkDetailClient({ work }) {
             ))}
           </div>
 
-          <div className={styles.logoBox}>
+          <motion.div className={styles.logoBox} {...fadeInUp(0.2)}>
             <Image
               src={work.logo}
               alt={`${work.title} logo`}
@@ -35,7 +45,7 @@ export default function WorkDetailClient({ work }) {
               height={260}
               className={styles.logo}
             />
-          </div>
+          </motion.div>
         </section>
 
         <section className={styles.gallery}>

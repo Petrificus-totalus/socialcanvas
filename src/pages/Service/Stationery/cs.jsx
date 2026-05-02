@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "./four.module.css";
+import styles from "./cs.module.css";
 import Image from "next/image";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { fadeIn } from "@/constant";
 
-export default function Four() {
+export default function CS() {
   const handRef = useRef(null);
   const controls = useAnimation();
   const { scrollYProgress } = useScroll({
@@ -49,9 +49,9 @@ export default function Four() {
       <div className={styles.heading}>
         <div className={styles.purple}>BRAND IDENTITY</div>
         <div className={styles.purple}>WEBSITE / SEO</div>
-        <div className={styles.white}>SOCIAL MEDIA</div>
+        <div className={styles.purple}>SOCIAL MEDIA</div>
         <div className={styles.purple}>IT PROGRAM</div>
-        <div className={styles.purple}>CUSTOMISED STATIONERY</div>
+        <div className={styles.white}>CUSTOMISED STATIONERY</div>
       </div>
 
       {/* 中间 icon + paragraph */}
@@ -81,16 +81,33 @@ export default function Four() {
               style={{ objectFit: "contain" }}
             />
           </div>
+          <div className={styles.icon}>
+            <Image
+              src="/Quote_Pink.svg"
+              alt="Chat Icon 4"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div className={styles.icon}>
+            <Image
+              src="/Quote_Pink.svg"
+              alt="Chat Icon 5"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
 
         <motion.p className={styles.paragraph} {...fadeIn()}>
-          We help brands show up, stand out, and stay consistent across the
-          platforms that matter most. Our social media management services cover
-          strategy, content creation, scheduling, community engagement, and
-          performance tracking. Whether you're looking to build awareness, drive
-          traffic, or grow a loyal following, we tailor our approach to align
-          with your goals and voice. Let us handle the day-to-day, so you can
-          focus on running your business while your online presence thrives.
+          We also offer custom branded stationery and promotional products to
+          help strengthen your business identity across everyday touchpoints.
+          Our services include branded coffee cups, pens, T-shirts, stamps,
+          banners, mouse pads, acrylic fridge magnets and more—ideal for
+          corporate use, events, marketing campaigns, and client gifts. With a
+          focus on high-quality materials and consistent brand presentation, our
+          custom business stationery solutions help reinforce professionalism,
+          improve brand recognition, and reflect the quality of your services.
         </motion.p>
       </div>
     </section>

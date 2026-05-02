@@ -2,6 +2,8 @@ export const works = [
   {
     slug: "42F",
     title: "42FINANCE",
+    backgroundColor: "#ffffff",
+    titleColor: "#767676",
     logo: "/work/42F/cover.png",
     cover: "/work/42F/cover.png",
     description: [
@@ -20,6 +22,8 @@ export const works = [
   {
     slug: "h365",
     title: "HORIZON 365",
+    backgroundColor: "#000000",
+    titleColor: "#f39ac9",
     logo: "/work/H365/logo.png",
     cover: "/work/H365/cover.png",
     description: [
@@ -36,6 +40,8 @@ export const works = [
   {
     slug: "ABC",
     title: "ABC Beef Club",
+    backgroundColor: "#ffffff",
+    titleColor: "#a9927d",
     logo: "/work/ABC/Logo.png",
     cover: "/work/ABC/cover.png",
     description: [
@@ -49,6 +55,8 @@ export const works = [
   {
     slug: "Maxsure",
     title: "Maxsure Property",
+    backgroundColor: "#000000",
+    titleColor: "#fcc673",
     logo: "/work/Maxsure/logo.png",
     cover: "/work/Maxsure/cover.png",
     description: [
@@ -65,6 +73,8 @@ export const works = [
   {
     slug: "Dental",
     title: "Mobile Dental Health Studio",
+    backgroundColor: "#ffffff",
+    titleColor: "#386aa6",
     logo: "/work/Dental/logo.png",
     cover: "/work/Dental/cover.png",
     description: [
@@ -77,6 +87,8 @@ export const works = [
   {
     slug: "Otd",
     title: "Ode to Flowers",
+    backgroundColor: "#ffffff",
+    titleColor: "#000",
     logo: "/work/Otd/logo.png",
     cover: "/work/Otd/cover.png",
     description: [
@@ -93,6 +105,8 @@ export const works = [
   {
     slug: "xc",
     title: "Xtremely Clean",
+    backgroundColor: "#ffffff",
+    titleColor: "#3a4a93",
     logo: "/work/xc/logo.png",
     cover: "/work/xc/cover.png",
     description: [
@@ -105,6 +119,8 @@ export const works = [
   {
     slug: "Maxwell",
     title: "Maxwell Migration",
+    backgroundColor: "#ffffff",
+    titleColor: "#252456",
     logo: "/work/Maxwell/logo.png",
     cover: "/work/Maxwell/cover.png",
     description: [

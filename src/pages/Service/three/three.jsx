@@ -32,57 +32,59 @@ export default function Three() {
 
   return (
     <section className={styles.section} id="three" ref={ref}>
-        <motion.div
-          className={styles.hand}
-          style={{ x: handX }}
-          animate={controls}
-        >
-          <Image
-            src="/Hand2.svg"
-            alt="Hand with Magnifier"
-            fill
-            style={{ objectFit: "contain" }}
-            priority
-          />
-        </motion.div>
+      <motion.div
+        className={styles.hand}
+        style={{ x: handX }}
+        animate={controls}
+      >
+        <Image
+          src="/Hand2.svg"
+          alt="Hand with Magnifier"
+          fill
+          style={{ objectFit: "contain" }}
+          priority
+        />
+      </motion.div>
 
-        <div className={styles.heading}>
-          <div className={styles.white}>BRAND IDENTITY</div>
-          <div className={styles.purple}>WEBSITE / SEO</div>
-          <div className={styles.white}>SOCIAL MEDIA</div>
-        </div>
+      <div className={styles.heading}>
+        <div className={styles.white}>BRAND IDENTITY</div>
+        <div className={styles.purple}>WEBSITE / SEO</div>
+        <div className={styles.white}>SOCIAL MEDIA</div>
+        <div className={styles.white}>IT PROGRAM</div>
+        <div className={styles.white}>CUSTOMISED STATIONERY</div>
+      </div>
 
-        <div className={styles.content}>
-          <div className={styles.iconRow}>
-            <div className={styles.icon}>
-              <Image
-                src="/Quote_White.svg"
-                alt="Chat Icon 1"
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-            <div className={styles.icon}>
-              <Image
-                src="/Quote_White.svg"
-                alt="Chat Icon 2"
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </div>
+      <div className={styles.content}>
+        <div className={styles.iconRow}>
+          <div className={styles.icon}>
+            <Image
+              src="/Quote_White.svg"
+              alt="Chat Icon 1"
+              fill
+              style={{ objectFit: "contain" }}
+            />
           </div>
-
-          <motion.p className={styles.paragraph} {...fadeIn()}>
-            We design and build websites that not only look great but perform
-            seamlessly. From initial wireframes to final launch, we create
-            user-focused, responsive sites tailored to your brand and business
-            goals. Every site we build is optimised for speed, accessibility, and
-            mobile experience. Our SEO foundations ensure your website is
-            discoverable, helping you rank higher and reach the right audience.
-            Whether it's a new build or a redesign, we deliver websites that are
-            ready to grow with you.
-          </motion.p>
+          <div className={styles.icon}>
+            <Image
+              src="/Quote_White.svg"
+              alt="Chat Icon 2"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
-      </section>
+
+        <motion.p className={styles.paragraph} {...fadeIn()}>
+          We design and build websites that not only look great but perform
+          seamlessly. From initial wireframes to final launch, we create
+          user-focused, responsive sites tailored to your brand and business
+          goals. Every site we build is optimised for speed, accessibility, and
+          mobile experience. Our SEO foundations ensure your website is
+          discoverable, helping you rank higher and reach the right audience.
+          Whether it's a new build or a redesign, we deliver websites that are
+          ready to grow with you.
+        </motion.p>
+      </div>
+    </section>
   );
 }
