@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <VideoWrapper>{children}</VideoWrapper> */}
-        {children}
+        <VideoWrapper>{children}</VideoWrapper>
+        {/* {children} */}
       </body>
     </html>
   );

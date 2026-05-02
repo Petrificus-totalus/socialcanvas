@@ -67,7 +67,7 @@ export const works = [
     images: [
       "/work/Maxsure/a-frame.png",
       "/work/Maxsure/Business_Card.png",
-      "/work/Maxsure/Flyer.png",
+      "/work/Maxsure/FLyer.png",
     ],
   },
   {
