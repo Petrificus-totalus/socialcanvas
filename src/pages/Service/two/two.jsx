@@ -17,7 +17,7 @@ export default function Two() {
   const handY = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   return (
-    <section className={styles.section} id="two" ref={ref}>
+    <section className={styles.section} id="section_brand" ref={ref}>
       {/* 左上角手的图片，加入 motion.div 包裹 */}
       <motion.div className={styles.hand} style={{ y: handY }}>
         <Image
@@ -34,7 +34,7 @@ export default function Two() {
         <div className={styles.purple}>WEBSITE / SEO</div>
         <div className={styles.purple}>SOCIAL MEDIA</div>
         <div className={styles.purple}>IT PROGRAM</div>
-        <div className={styles.purple}>CUSTOMISED STATIONERY</div>
+        <div className={styles.purple}>STATIONERY</div>
       </div>
 
       <div className={styles.content}>

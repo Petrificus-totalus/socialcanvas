@@ -29,7 +29,7 @@ export default function Four() {
   }, [scrollYProgress, controls]);
 
   return (
-    <section className={styles.section} id="four">
+    <section className={styles.section} id="section_it">
       <motion.div
         className={styles.hand}
         ref={handRef}
@@ -38,7 +38,7 @@ export default function Four() {
         style={{ x }}
       >
         <Image
-          src="/Hand3.svg"
+          src="/it.svg"
           alt="Hand with Magnifier"
           fill
           style={{ objectFit: "contain" }}
@@ -51,7 +51,7 @@ export default function Four() {
         <div className={styles.purple}>WEBSITE / SEO</div>
         <div className={styles.purple}>SOCIAL MEDIA</div>
         <div className={styles.white}>IT PROGRAM</div>
-        <div className={styles.purple}>CUSTOMISED STATIONERY</div>
+        <div className={styles.purple}>STATIONERY</div>
       </div>
 
       {/* 中间 icon + paragraph */}

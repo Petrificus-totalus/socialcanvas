@@ -33,7 +33,7 @@ const lines = [
     delay: 1.4,
   },
   {
-    text: "CUSTOMISED STATIONERY",
+    text: "STATIONERY",
     to: "section_stationery",
     direction: "up",
     delay: 1.8,

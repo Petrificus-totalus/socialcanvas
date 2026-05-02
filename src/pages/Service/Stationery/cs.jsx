@@ -29,7 +29,7 @@ export default function CS() {
   }, [scrollYProgress, controls]);
 
   return (
-    <section className={styles.section} id="four">
+    <section className={styles.section} id="section_stationery">
       <motion.div
         className={styles.hand}
         ref={handRef}
@@ -38,7 +38,7 @@ export default function CS() {
         style={{ x }}
       >
         <Image
-          src="/Hand3.svg"
+          src="/cs.svg"
           alt="Hand with Magnifier"
           fill
           style={{ objectFit: "contain" }}
@@ -51,7 +51,7 @@ export default function CS() {
         <div className={styles.purple}>WEBSITE / SEO</div>
         <div className={styles.purple}>SOCIAL MEDIA</div>
         <div className={styles.purple}>IT PROGRAM</div>
-        <div className={styles.white}>CUSTOMISED STATIONERY</div>
+        <div className={styles.white}>STATIONERY</div>
       </div>
 
       {/* 中间 icon + paragraph */}

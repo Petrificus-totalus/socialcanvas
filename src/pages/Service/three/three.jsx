@@ -31,7 +31,7 @@ export default function Three() {
   }, [scrollYProgress, controls]);
 
   return (
-    <section className={styles.section} id="three" ref={ref}>
+    <section className={styles.section} id="section_web" ref={ref}>
       <motion.div
         className={styles.hand}
         style={{ x: handX }}
@@ -51,7 +51,7 @@ export default function Three() {
         <div className={styles.purple}>WEBSITE / SEO</div>
         <div className={styles.white}>SOCIAL MEDIA</div>
         <div className={styles.white}>IT PROGRAM</div>
-        <div className={styles.white}>CUSTOMISED STATIONERY</div>
+        <div className={styles.white}>STATIONERY</div>
       </div>
 
       <div className={styles.content}>
