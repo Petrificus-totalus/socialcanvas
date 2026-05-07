@@ -19,8 +19,6 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  // Also supported but less commonly used
-  // interactiveWidget: 'resizes-visual',
 };
 
 export default function RootLayout({ children }) {

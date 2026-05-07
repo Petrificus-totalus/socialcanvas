@@ -46,8 +46,8 @@
 .purple::after {
   content: "";
   position: absolute;
-  left: -100vw; /* 向左撑出整屏 */
-  right: -100vw; /* 向右撑出整屏 */
+  left: -100vw;
+  right: -100vw;
   bottom: 0.9rem;
   height: 1px;
   background-color: #493e5e;
@@ -59,7 +59,6 @@
   position: relative;
 }
 
-/* 中间内容区域 */
 .content {
   display: flex;
   flex-direction: column;
@@ -71,7 +70,7 @@
 
 .iconRow {
   display: flex;
-  gap: 0.4rem; /* 控制两个图标之间的间距 */
+  gap: 0.4rem;
   position: relative;
   z-index: 2;
 }

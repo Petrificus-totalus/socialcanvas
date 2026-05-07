@@ -12,7 +12,6 @@
   overflow-y: clip;
 }
 
-/* 手图左上角定位 */
 .hand {
   position: absolute;
   top: 0;
@@ -22,7 +21,6 @@
   z-index: 12;
 }
 
-/* 右上角标题块 */
 .heading {
   align-self: flex-end;
   margin-top: var(--service-text-top);
@@ -46,8 +44,8 @@
 .white::after {
   content: "";
   position: absolute;
-  left: -100vw; /* 向左撑出整屏 */
-  right: -100vw; /* 向右撑出整屏 */
+  left: -100vw;
+  right: -100vw;
   bottom: 0.9rem;
   height: 1px;
   background-color: white;
@@ -57,7 +55,6 @@
   color: #b191be;
 }
 
-/* 中间内容区域 */
 .content {
   display: flex;
   flex-direction: column;

@@ -40,7 +40,6 @@ const lines = [
   },
 ];
 
-// 计算所有行完成fadeIn动画的最大时间（最后一行延迟 + 动画持续时间）
 const MAX_FADEIN_DELAY = Math.max(...lines.map((line) => line.delay)) + 0.5; // 0.5秒是动画持续时间
 
 export default function One() {
@@ -62,7 +61,7 @@ export default function One() {
         });
       },
       {
-        threshold: 0.1, // 当10%的元素可见时触发
+        threshold: 0.1,
       }
     );
 
@@ -82,7 +81,6 @@ export default function One() {
 
   useEffect(() => {
     if (isInView && !scanStarted) {
-      // 等待所有行的fadeIn动画完成
       fadeInTimeout.current = setTimeout(() => {
         setScanStarted(true);
         console.log("All fadeIn animations completed, starting scan");
@@ -115,7 +113,7 @@ export default function One() {
                 const delay = scanStarted
                   ? (() => {
                       if (i === 0) return 0;
-                      return 0.1 + (i - 1) * 0.04; // 剩下的快扫
+                      return 0.1 + (i - 1) * 0.04;
                     })()
                   : 0;
 

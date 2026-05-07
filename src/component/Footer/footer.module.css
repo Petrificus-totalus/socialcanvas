@@ -10,13 +10,11 @@
   font-family: "GilroyMedium";
 }
 
-/* ✅ 让 logo 保持合适大小 */
 .logo img {
   width: 200px;
   height: auto;
 }
 
-/* ✅ 右侧信息 */
 .contactInfo {
   text-align: left;
 }
@@ -25,7 +23,6 @@
   font-size: 1.5rem;
 }
 
-/* ✅ 适配平板（最大宽度 1024px）：缩小间距 */
 @media (max-width: 1024px) {
   .footer {
     padding: 25px 8%;
@@ -40,7 +37,6 @@
   }
 }
 
-/* ✅ 适配手机（最大宽度 768px）：改成竖向排列 */
 @media (max-width: 768px) {
   .footer {
     flex-direction: column-reverse;
@@ -61,7 +57,6 @@
   }
 }
 
-/* ✅ 适配超小屏幕（最大宽度 480px）：调整大小 */
 @media (max-width: 480px) {
   .footer {
     flex-direction: column-reverse;

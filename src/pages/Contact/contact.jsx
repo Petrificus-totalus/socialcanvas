@@ -59,85 +59,85 @@ export default function Contact() {
 
   return (
     <section className={styles.section}>
-        <Image
-          src="/contact.jpg"
-          alt="background"
-          fill
-          className={styles.bg}
-          priority
-        />
+      <Image
+        src="/contact.jpg"
+        alt="background"
+        fill
+        className={styles.bg}
+        priority
+      />
 
-        <motion.h2 className={styles.title} {...fadeInLeft()}>
-          GET IN TOUCH
-        </motion.h2>
+      <motion.h2 className={styles.title} {...fadeInLeft()}>
+        GET IN TOUCH
+      </motion.h2>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.column}>
-            <motion.input
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              {...fadeInLeft()}
-            />
-            <motion.input
-              name="email"
-              type="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              {...fadeInLeft(0.1)}
-            />
-          </div>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.column}>
+          <motion.input
+            name="name"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            {...fadeInLeft()}
+          />
+          <motion.input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            {...fadeInLeft(0.1)}
+          />
+        </div>
 
-          <div className={styles.column}>
-            <motion.input
-              name="phone"
-              placeholder="Your Phone Number"
-              value={form.phone}
-              onChange={handleChange}
-              {...fadeInLeft(0.1)}
-            />
-            <motion.input
-              name="business"
-              placeholder="Your Business"
-              value={form.business}
-              onChange={handleChange}
-              {...fadeInLeft(0.15)}
-            />
-            <motion.textarea
-              name="enquiry"
-              placeholder="Your Enquiry"
-              rows={5}
-              value={form.enquiry}
-              onChange={handleChange}
-              required
-              {...fadeInLeft(0.15)}
-            />
-            <motion.button
-              type="submit"
-              className={styles.submit}
-              disabled={status === "loading"}
-              {...fadeInLeft(0.15)}
+        <div className={styles.column}>
+          <motion.input
+            name="phone"
+            placeholder="Your Phone Number"
+            value={form.phone}
+            onChange={handleChange}
+            {...fadeInLeft(0.1)}
+          />
+          <motion.input
+            name="business"
+            placeholder="Your Business"
+            value={form.business}
+            onChange={handleChange}
+            {...fadeInLeft(0.15)}
+          />
+          <motion.textarea
+            name="enquiry"
+            placeholder="Your Enquiry"
+            rows={5}
+            value={form.enquiry}
+            onChange={handleChange}
+            required
+            {...fadeInLeft(0.15)}
+          />
+          <motion.button
+            type="submit"
+            className={styles.submit}
+            disabled={status === "loading"}
+            {...fadeInLeft(0.15)}
+          >
+            {status === "loading" ? "SENDING..." : "SUBMIT"}
+          </motion.button>
+
+          {message && (
+            <p
+              className={
+                status === "success"
+                  ? styles.successMessage
+                  : styles.errorMessage
+              }
             >
-              {status === "loading" ? "SENDING..." : "SUBMIT"}
-            </motion.button>
-
-            {message && (
-              <p
-                className={
-                  status === "success"
-                    ? styles.successMessage
-                    : styles.errorMessage
-                }
-              >
-                {message}
-              </p>
-            )}
-          </div>
-        </form>
-      </section>
+              {message}
+            </p>
+          )}
+        </div>
+      </form>
+    </section>
   );
 }

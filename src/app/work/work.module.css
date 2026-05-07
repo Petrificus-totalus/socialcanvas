@@ -48,13 +48,11 @@
   animation: cardIn 0.7s ease forwards;
 }
 
-/* 🔥 图片铺满 */
 .image {
-  object-fit: cover; /* ❗关键 */
+  object-fit: cover;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-/* 🔥 遮罩层 */
 .overlay {
   position: absolute;
   inset: 0;
@@ -84,7 +82,6 @@
   margin: 0;
 }
 
-/* 🔥 hover效果 */
 .card:hover {
   transform: translateY(-8px);
 }
@@ -98,7 +95,6 @@
   transform: scale(1);
 }
 
-/* 🔥 入场动画 */
 @keyframes cardIn {
   to {
     opacity: 1;
@@ -106,7 +102,6 @@
   }
 }
 
-/* 📱 mobile */
 @media (max-width: 768px) {
   .page {
     padding: 60px 18px;

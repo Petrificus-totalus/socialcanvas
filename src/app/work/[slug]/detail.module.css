@@ -96,7 +96,6 @@
   object-fit: cover;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .page {
     padding: 50px 18px 70px;

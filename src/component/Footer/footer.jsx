@@ -4,7 +4,6 @@ import styles from "./footer.module.css";
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      {/* 左侧 Logo */}
       <div className={styles.logo}>
         <img src="/Logo_White.svg" alt="Logo" />
       </div>

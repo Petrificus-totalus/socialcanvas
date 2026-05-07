@@ -54,7 +54,6 @@ export default function CS() {
         <div className={styles.white}>STATIONERY</div>
       </div>
 
-      {/* 中间 icon + paragraph */}
       <div className={styles.content}>
         <div className={styles.iconRow}>
           <div className={styles.icon}>

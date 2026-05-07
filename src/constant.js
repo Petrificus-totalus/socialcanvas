@@ -9,11 +9,11 @@ export const fadeIn = (direction = "up", delay = 0) => {
     whileInView: {
       opacity: 1,
       y: 0,
-      scale: 1, // 缩回原来大小，制造“砸上去”感觉
+      scale: 1,
     },
     transition: {
       duration: 0.35, // 短时间，快速
-      ease: [0.4, 0.02, 0.2, 1], // 类似 bounce 的 ease
+      ease: [0.4, 0.02, 0.2, 1], //
       delay,
     },
     viewport: { once: true, amount: 0.2 },
@@ -32,7 +32,7 @@ export const fadeInUp = (delay = 0) => ({
   whileInView: { opacity: 1, y: 0 },
   transition: {
     duration: 0.7,
-    ease: [0.22, 1, 0.36, 1], // 更丝滑
+    ease: [0.22, 1, 0.36, 1],
     delay,
   },
   viewport: { once: true, amount: 0.25 },

@@ -13,12 +13,10 @@ export default function Two() {
     offset: ["start end", "start start"], // 进入到视口和滑出时
   });
 
-  // 视差移动：从 -100px 到 0
   const handY = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   return (
     <section className={styles.section} id="section_brand" ref={ref}>
-      {/* 左上角手的图片，加入 motion.div 包裹 */}
       <motion.div className={styles.hand} style={{ y: handY }}>
         <Image
           src="/Hand1.svg"

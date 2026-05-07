@@ -34,9 +34,9 @@
   display: inline-block;
   transition: color 0.3s ease, transform 0.3s ease;
   color: black;
-  white-space: pre; /* 保留空格 */
+  white-space: pre;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-  opacity: 1; /* 确保字符可见 */
+  opacity: 1;
 }
 
 .link:hover .char {
@@ -49,7 +49,7 @@
   opacity: 1;
 }
 
-/* 扫描动画 - 从左到右 */
+/* 扫描动画从左到右 */
 .scan {
   animation: scanAnimation 0.3s ease forwards;
 }

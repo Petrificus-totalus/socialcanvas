@@ -100,7 +100,6 @@
   color: #fff;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .page {
     padding: 46px 16px 70px;

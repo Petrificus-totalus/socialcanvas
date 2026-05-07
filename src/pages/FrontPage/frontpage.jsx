@@ -64,7 +64,6 @@ export default function FrontPage() {
 
   return (
     <div className={styles.wrapper}>
-      {/* 背景图 */}
       <Image
         src="/Home.jpg"
         alt="background"
@@ -73,7 +72,6 @@ export default function FrontPage() {
         priority
       />
 
-      {/* 顶部导航栏 */}
       <nav className={styles.navbar}>
         <div className={styles.logo}>
           <Image
@@ -110,7 +108,7 @@ export default function FrontPage() {
           ))}
         </div>
 
-        {/* 汉堡按钮（移动端） */}
+        {/* 汉堡按钮 */}
         <div
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
@@ -122,7 +120,7 @@ export default function FrontPage() {
         </div>
       </nav>
 
-      {/* 移动端 overlay 菜单 */}
+      {/* 移动端菜单 */}
       {(menuOpen || closing) && (
         <div className={styles.overlay} onClick={closeMenu}>
           <div
@@ -158,7 +156,6 @@ export default function FrontPage() {
         </div>
       )}
 
-      {/* 中间正文内容 */}
       <main className={styles.contentWrapper}>
         <div className={styles.content} ref={contentRef}>
           <motion.p {...fadeInLeft()}>
@@ -170,7 +167,7 @@ export default function FrontPage() {
         </div>
       </main>
 
-      {/* 向下滚动提示 + 箭头 */}
+      {/* 向下箭头 */}
       <div className={styles.scrollArea}>
         <div className={styles.hintWrapper}>
           <motion.div
