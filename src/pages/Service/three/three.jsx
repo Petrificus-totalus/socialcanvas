@@ -12,7 +12,7 @@ export default function Three() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start 30%"], // 滚到页面占据视口约 70% 开始到达终点
+    offset: ["start end", "start 30%"],
   });
 
   const handX = useTransform(scrollYProgress, [0, 1], [-200, 0]);
