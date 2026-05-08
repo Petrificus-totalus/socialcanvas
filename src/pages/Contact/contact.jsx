@@ -66,20 +66,31 @@ export default function Contact() {
         className={styles.bg}
         priority
       />
+      <div className={styles.overlay} />
 
-      <motion.h2 className={styles.title} {...fadeInLeft()}>
-        GET IN TOUCH
-      </motion.h2>
+      <div className={styles.card}>
+        <motion.h2 className={styles.title} {...fadeInLeft()}>
+          GET IN TOUCH
+        </motion.h2>
+        <motion.p className={styles.subtitle} {...fadeInLeft(0.05)}>
+          Have a project in mind? We&apos;d love to hear from you.
+        </motion.p>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.column}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <motion.input
             name="name"
             placeholder="Your Name"
             value={form.name}
             onChange={handleChange}
             required
-            {...fadeInLeft()}
+            {...fadeInLeft(0.1)}
+          />
+          <motion.input
+            name="phone"
+            placeholder="Your Phone Number"
+            value={form.phone}
+            onChange={handleChange}
+            {...fadeInLeft(0.1)}
           />
           <motion.input
             name="email"
@@ -88,17 +99,7 @@ export default function Contact() {
             value={form.email}
             onChange={handleChange}
             required
-            {...fadeInLeft(0.1)}
-          />
-        </div>
-
-        <div className={styles.column}>
-          <motion.input
-            name="phone"
-            placeholder="Your Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-            {...fadeInLeft(0.1)}
+            {...fadeInLeft(0.15)}
           />
           <motion.input
             name="business"
@@ -109,18 +110,19 @@ export default function Contact() {
           />
           <motion.textarea
             name="enquiry"
-            placeholder="Your Enquiry"
+            placeholder="Tell us about your project..."
             rows={5}
             value={form.enquiry}
             onChange={handleChange}
             required
-            {...fadeInLeft(0.15)}
+            className={styles.fullWidth}
+            {...fadeInLeft(0.2)}
           />
           <motion.button
             type="submit"
             className={styles.submit}
             disabled={status === "loading"}
-            {...fadeInLeft(0.15)}
+            {...fadeInLeft(0.25)}
           >
             {status === "loading" ? "SENDING..." : "SUBMIT"}
           </motion.button>
@@ -136,8 +138,8 @@ export default function Contact() {
               {message}
             </p>
           )}
-        </div>
-      </form>
+        </form>
+      </div>
     </section>
   );
 }
