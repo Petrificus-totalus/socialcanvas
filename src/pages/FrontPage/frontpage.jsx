@@ -158,11 +158,15 @@ export default function FrontPage() {
 
       <main className={styles.contentWrapper}>
         <div className={styles.content} ref={contentRef}>
-          <motion.p {...fadeInLeft()}>
-            We're a passionate team of digital design experts dedicated to
-            helping your business stand out. From building your brand to
-            boosting your online presence, we craft bold, effective solutions
-            that make your business shine.
+          <motion.h1 className={styles.headline} {...fadeInLeft()}>
+            We Design Brands<br />That Get Noticed
+          </motion.h1>
+          <motion.span className={styles.tagline} {...fadeInLeft()}>
+            Branding · Web Design · Digital Marketing
+          </motion.span>
+          <motion.p className={styles.description} {...fadeInLeft()}>
+            A Canberra-based creative agency helping small businesses
+            and startups stand out with bold, effective design.
           </motion.p>
         </div>
       </main>
@@ -175,7 +179,7 @@ export default function FrontPage() {
             ref={hintRef}
             {...fadeInLeft()}
           >
-            Scroll down to discover how we can help you grow.
+            See our services, team, and recent work
           </motion.div>
         </div>
 
