@@ -1,7 +1,7 @@
-import FrontPage from "@/pages/FrontPage/frontpage";
-import Service from "@/pages/Service/service";
-import Contact from "@/pages/Contact/contact";
-import Team from "@/pages/Team/team";
+import FrontPage from "@/sections/FrontPage/frontpage";
+import Service from "@/sections/Service/service";
+import Contact from "@/sections/Contact/contact";
+import Team from "@/sections/Team/team";
 
 import Footer from "@/component/Footer/footer";
 
