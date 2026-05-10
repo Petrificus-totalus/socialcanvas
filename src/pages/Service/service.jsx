@@ -1,7 +1,7 @@
 "use client";
 
 import Four from "./four/four";
-import One from "./one/one";
+import Toc from "./toc/toc";
 import Three from "./three/three";
 import Two from "./two/two";
 import IT from "./IT_Program/it";
@@ -10,7 +10,7 @@ import CS from "./Stationery/cs";
 export default function Service() {
   return (
     <>
-      <One />
+      <Toc />
       <Two />
       <Three />
       <Four />

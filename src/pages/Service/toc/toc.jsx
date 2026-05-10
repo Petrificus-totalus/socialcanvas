@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import styles from "./one.module.css";
+import styles from "./toc.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { fadeIn } from "@/constant";
@@ -12,37 +12,37 @@ const lines = [
     text: "BRAND IDENTITY",
     to: "section_brand",
     direction: "down",
-    delay: 0.2,
+    delay: 0,
   },
   {
     text: "WEBSITE / SEO",
     to: "section_web",
     direction: "up",
-    delay: 0.6,
+    delay: 0.3,
   },
   {
     text: "SOCIAL MEDIA",
     to: "section_social",
     direction: "up",
-    delay: 1,
+    delay: 0.6,
   },
   {
     text: "IT PROGRAM",
     to: "section_it",
     direction: "up",
-    delay: 1.4,
+    delay: 0.9,
   },
   {
     text: "STATIONERY",
     to: "section_stationery",
     direction: "up",
-    delay: 1.8,
+    delay: 1.2,
   },
 ];
 
 const MAX_FADEIN_DELAY = Math.max(...lines.map((line) => line.delay)) + 0.5; // 0.5秒是动画持续时间
 
-export default function One() {
+export default function Toc() {
   const [scanStarted, setScanStarted] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);

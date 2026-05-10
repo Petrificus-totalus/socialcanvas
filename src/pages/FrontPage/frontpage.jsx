@@ -159,7 +159,7 @@ export default function FrontPage() {
       <main className={styles.contentWrapper}>
         <div className={styles.content} ref={contentRef}>
           <motion.h1 className={styles.headline} {...fadeInLeft()}>
-            We Design Brands<br />That Get Noticed
+            WE DESIGN BRANDS<br />THAT GET NOTICED
           </motion.h1>
           <motion.span className={styles.tagline} {...fadeInLeft()}>
             Branding · Web Design · Digital Marketing

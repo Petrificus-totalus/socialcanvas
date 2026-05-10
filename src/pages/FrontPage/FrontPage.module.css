@@ -161,7 +161,7 @@
   font-family: "GilroyBold", sans-serif;
   font-size: clamp(2.8rem, 5vw, 5rem);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 1px;
   margin: 0;
 }
 
