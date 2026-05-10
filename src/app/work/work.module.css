@@ -26,8 +26,30 @@
 .back {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, gap 0.3s ease;
+}
+
+.back:hover {
+  opacity: 1;
+  gap: 12px;
+}
+
+.backArrow {
+  display: inline-block;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.back:hover .backArrow {
+  transform: translateX(-3px);
 }
 
 .grid {

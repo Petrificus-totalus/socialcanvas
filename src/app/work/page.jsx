@@ -50,7 +50,7 @@ export default function WorkPage() {
           <div className={styles.header}>
             <h1>OUR WORK</h1>
             <Link href="/" className={styles.back}>
-              &lt; BACK
+              <span className={styles.backArrow}>←</span> BACK
             </Link>
           </div>
 

@@ -4,6 +4,7 @@ export const works = [
     title: "42FINANCE",
     backgroundColor: "#ffffff",
     titleColor: "#767676",
+    url: "https://www.42f.com.au/",
     logo: "/work/42F/logo.png",
     cover: "/work/42F/cover.png",
     description: [
@@ -24,6 +25,7 @@ export const works = [
     title: "HORIZON 365",
     backgroundColor: "#000000",
     titleColor: "#f39ac9",
+    url: "https://h365-seven.vercel.app/", // TODO: add client website URL
     logo: "/work/H365/logo.png",
     cover: "/work/H365/cover.png",
     description: [
@@ -42,6 +44,7 @@ export const works = [
     title: "ABC Beef Club",
     backgroundColor: "#ffffff",
     titleColor: "#a9927d",
+    url: "", // not available
     logo: "/work/ABC/Logo.png",
     cover: "/work/ABC/cover.png",
     description: [
@@ -57,6 +60,7 @@ export const works = [
     title: "Maxsure Property",
     backgroundColor: "#000000",
     titleColor: "#fcc673",
+    url: "https://maxsureproperty.com.au/", 
     logo: "/work/Maxsure/logo.png",
     cover: "/work/Maxsure/cover.png",
     description: [
@@ -75,6 +79,7 @@ export const works = [
     title: "Mobile Dental Health Studio",
     backgroundColor: "#ffffff",
     titleColor: "#386aa6",
+    url: "", // TODO: add client website URL
     logo: "/work/Dental/logo.png",
     cover: "/work/Dental/cover.png",
     description: [
@@ -89,6 +94,7 @@ export const works = [
     title: "Ode to Flowers",
     backgroundColor: "#ffffff",
     titleColor: "#000",
+    url: "https://www.odetoflowers.com.au/", // TODO: add client website URL
     logo: "/work/Otd/logo.png",
     cover: "/work/Otd/cover.png",
     description: [
@@ -107,6 +113,7 @@ export const works = [
     title: "Xtremely Clean",
     backgroundColor: "#ffffff",
     titleColor: "#3a4a93",
+    url: "", // not available
     logo: "/work/xc/logo.png",
     cover: "/work/xc/cover.png",
     description: [
@@ -121,6 +128,7 @@ export const works = [
     title: "Maxwell Migration",
     backgroundColor: "#ffffff",
     titleColor: "#252456",
+    url: "https://maxwellco.com.au/",
     logo: "/work/Maxwell/logo.png",
     cover: "/work/Maxwell/cover.png",
     description: [

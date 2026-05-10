@@ -24,7 +24,7 @@ export default function WorkDetailClient({ work }) {
           <h1 style={{ color: titleColor }}>{work.title}</h1>
 
           <Link href="/work" className={styles.back}>
-            &lt; OUR WORK
+            <span className={styles.backArrow}>←</span> OUR WORK
           </Link>
         </header>
 
@@ -38,13 +38,33 @@ export default function WorkDetailClient({ work }) {
           </div>
 
           <motion.div className={styles.logoBox} {...fadeInUp(0.2)}>
-            <Image
-              src={work.logo}
-              alt={`${work.title} logo`}
-              width={420}
-              height={260}
-              className={styles.logo}
-            />
+            {work.url ? (
+              <motion.a
+                href={work.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.logoLink}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Image
+                  src={work.logo}
+                  alt={`${work.title} logo`}
+                  width={420}
+                  height={260}
+                  className={styles.logo}
+                />
+              </motion.a>
+            ) : (
+              <Image
+                src={work.logo}
+                alt={`${work.title} logo`}
+                width={420}
+                height={260}
+                className={styles.logo}
+              />
+            )}
           </motion.div>
         </section>
 

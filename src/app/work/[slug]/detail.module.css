@@ -33,14 +33,30 @@
 .back {
   color: currentColor;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
-  display: inline-block;
-  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, gap 0.3s ease;
 }
 
 .back:hover {
-  opacity: 0.6;
+  opacity: 1;
+  gap: 12px;
+}
+
+.backArrow {
+  display: inline-block;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.back:hover .backArrow {
+  transform: translateX(-3px);
 }
 
 .intro {
@@ -71,10 +87,20 @@
   align-items: center;
 }
 
+.logoLink {
+  display: inline-block;
+  cursor: pointer;
+  width: 75%;
+}
+
 .logo {
   width: 75%;
   height: auto;
   object-fit: contain;
+}
+
+.logoLink .logo {
+  width: 100%;
 }
 
 .gallery {
