@@ -74,7 +74,7 @@ const faqs = [
 ];
 
 export default function FAQClient() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <main className={styles.page}>
@@ -88,7 +88,7 @@ export default function FAQClient() {
           <h1>Frequently Asked Questions</h1>
 
           <Link href="/" className={styles.back}>
-            &lt; BACK
+            <span className={styles.backArrow}>←</span> BACK
           </Link>
         </motion.header>
 

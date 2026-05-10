@@ -19,8 +19,36 @@
   text-align: left;
 }
 
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pin {
+  flex-shrink: 0;
+  margin-top: 4px;
+  opacity: 0.6;
+}
+
 .contactInfo p {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.instagram {
+  display: inline-block;
+  color: #fff;
+  margin-top: 12px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.instagram:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {
