@@ -1,12 +1,18 @@
 "use client";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function VideoWrapper({ children }) {
   const [showMain, setShowMain] = useState(false);
+  const pathname = usePathname();
 
   const handleVideoEnd = () => {
     setShowMain(true);
   };
+
+  if (pathname !== "/") {
+    return children;
+  }
 
   if (!showMain) {
     return (

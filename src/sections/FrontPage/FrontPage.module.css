@@ -34,8 +34,8 @@
 
 .menu {
   display: flex;
-  gap: 24px;
-  font-size: 1.5rem;
+  gap: 18px;
+  font-size: clamp(1.05rem, 1.45vw, 1.5rem);
   align-items: center;
 }
 
@@ -298,6 +298,9 @@
 }
 .overlayMenu a:nth-child(5) {
   animation-delay: 0.8s;
+}
+.overlayMenu a:nth-child(6) {
+  animation-delay: 0.9s;
 }
 
 @keyframes fadeInMenu {

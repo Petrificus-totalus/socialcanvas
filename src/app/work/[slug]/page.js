@@ -3,7 +3,7 @@ import { works } from "@/data/works";
 import WorkDetailClient from "./WorkDetailClient";
 import Footer from "@/component/Footer/footer";
 
-const siteUrl = "https://socialcanvas.com.au";
+const siteUrl = "https://www.socialcanvas.com.au";
 const siteName = "Social Canvas";
 
 export async function generateMetadata({ params }) {

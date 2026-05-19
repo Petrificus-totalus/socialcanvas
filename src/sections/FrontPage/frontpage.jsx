@@ -20,6 +20,7 @@ export default function FrontPage() {
     { label: "Our Service", to: "scroll_service", type: "scroll" },
     { label: "Our Team", to: "scroll_team", type: "scroll" },
     { label: "Our Work", to: "/work", type: "page" },
+    { label: "Blog", to: "/blog", type: "page" },
     { label: "FAQ", to: "/faq", type: "page" },
     { label: "Contact Us", to: "scroll_contact", type: "scroll" },
   ];
