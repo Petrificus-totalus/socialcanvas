@@ -140,7 +140,7 @@ export default async function BlogDetailPage({ params }) {
                     height={image.height}
                     sizes="(max-width: 768px) 100vw, 420px"
                   />
-                  <figcaption>Minimal packaging reference {index + 1}</figcaption>
+                  <figcaption>{image.alt}</figcaption>
                 </figure>
               ))}
             </section>
